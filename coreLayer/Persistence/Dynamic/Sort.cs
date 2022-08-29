@@ -1,5 +1,5 @@
 ﻿
-namespace coreLayer.Persistence.Dynamic
+namespace coreLayer.Permanency.Dynamic
 {
     public class Sort
     {

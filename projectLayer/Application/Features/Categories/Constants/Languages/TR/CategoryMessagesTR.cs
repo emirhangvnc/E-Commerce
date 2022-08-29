@@ -44,7 +44,7 @@ namespace projectLayer.Application.Features.Categories.Constants.Languages.TR
         public static string Category = worker.Category();
         public static string CategoryNameNotNull = worker.CategoryNameNotNull();
         public static string CategoryListed = worker.CategoryListed();
-        public static string CitiesListed = worker.CategoriesListed();
+        public static string CategoriesListed = worker.CategoriesListed();
         public static string CategoryAdded = worker.CategoryAdded();
         public static string CategoryDeleted = worker.CategoryDeleted();
         public static string CategoryUpdated = worker.CategoryUpdated();

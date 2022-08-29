@@ -1,10 +1,10 @@
-﻿using coreLayer.Persistence.Dynamic;
-using coreLayer.Persistence.Paging;
+﻿using coreLayer.Permanency.Dynamic;
+using coreLayer.Permanency.Paging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
-namespace coreLayer.Persistence.Repositories
+namespace coreLayer.Permanency.Repositories
 {
     public class EfRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>, IRepository<TEntity>
     where TEntity : Entity

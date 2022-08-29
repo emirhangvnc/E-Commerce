@@ -1,6 +1,6 @@
-﻿using coreLayer.Persistence.Repositories;
+﻿using coreLayer.Permanency.Repositories;
 
-namespace coreLayer.Persistence.Paging
+namespace coreLayer.Permanency.Paging
 {
     public class UpdateDTO
     {

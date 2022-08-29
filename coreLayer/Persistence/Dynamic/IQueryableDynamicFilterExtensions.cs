@@ -1,7 +1,7 @@
 ﻿using System.Linq.Dynamic.Core;
 using System.Text;
 
-namespace coreLayer.Persistence.Dynamic
+namespace coreLayer.Permanency.Dynamic
 {
     public static class IQueryableDynamicFilterExtensions
     {

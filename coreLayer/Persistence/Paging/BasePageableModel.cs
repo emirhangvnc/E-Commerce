@@ -1,5 +1,5 @@
 ﻿
-namespace coreLayer.Persistence.Paging
+namespace coreLayer.Permanency.Paging
 {
     public class BasePageableModel
     {

@@ -1,4 +1,4 @@
-﻿using coreLayer.Persistence.Repositories;
+﻿using coreLayer.Permanency.Repositories;
 using coreLayer.Utilities.Results;
 
 namespace projectLayer.Application.Services.Abstract.Base

@@ -1,7 +1,7 @@
-﻿using coreLayer.Persistence.Paging;
+﻿using coreLayer.Permanency.Paging;
 using Microsoft.EntityFrameworkCore;
 
-namespace coreLayer.Persistence.Paging
+namespace coreLayer.Permanency.Paging
 {
     public static class IQueryablePaginateExtensions
     {
