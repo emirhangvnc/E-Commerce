@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using projectLayer.Application.Features.Categories.Rules;
 using projectLayer.Application.Services.Abstract;
-using projectLayer.Application.Services.Repositories;
+using projectLayer.Persistence.Services.Repositories;
 using projectLayer.Persistence.Repositories;
 
 namespace projectLayer.Application.Services.DependencyResolvers.Autofac

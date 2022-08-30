@@ -54,6 +54,7 @@ namespace projectLayer.Application.Features.Brands.Rules
 
             var brand = Mapper.Map<Brand>(result);
             await Task.Run(() => DbContext.Brands.Update(brand));
+            await DbContext.SaveChangesAsync();
             return new SuccessResult(BrandMessagesTR.BrandUpdated);
         }
 

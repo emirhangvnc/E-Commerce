@@ -5,14 +5,14 @@ using coreLayer.Utilities.Results;
 using Microsoft.EntityFrameworkCore;
 using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using projectLayer.Application.Features.Base.Rules;
-using projectLayer.Application.Features.Categories.Validations.TR;
 using projectLayer.Application.Features.Products.Constants.Languages.TR;
 using projectLayer.Application.Features.Products.DTOs;
+using projectLayer.Application.Features.Products.Validations.TR;
 using projectLayer.Application.Services.Abstract;
 using projectLayer.Domain.Entities;
 using projectLayer.Persistence.Contexts;
 
-namespace Application.Features.Products.Rules
+namespace projectLayer.Application.Features.Products.Rules
 {
     public class ProductManager : ManagerBase, IProductService
     {
@@ -20,18 +20,19 @@ namespace Application.Features.Products.Rules
         {
         }
 
-        [ValidationAspect(typeof(CategoryAddDTOValidator))]
+        [ValidationAspect(typeof(ProductAddDTOValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public async Task<IResult> Add(ProductAddDTO addedDto)
         {
-            //var product = Mapper.Map<Brand>(result);
-            //await DbContext.Brands.AddAsync(product);
+            var product = Mapper.Map<Product>(addedDto);
+            product.CreatedDate = DateTime.Now;
+            await DbContext.Products.AddAsync(product);
             await DbContext.SaveChangesAsync();
             return new SuccessResult(ProductMessagesTR.ProductAdded);
         }
 
         //[SecuredOperation("product.add,admin")]
-        [ValidationAspect(typeof(CategoryDeleteDTOValidator))]
+        [ValidationAspect(typeof(ProductDeleteDTOValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public async Task<IResult> Delete(ProductDeleteDTO deletedDto)
         {
@@ -44,7 +45,7 @@ namespace Application.Features.Products.Rules
             return new SuccessResult(ProductMessagesTR.ProductDeleted);
         }
 
-        [ValidationAspect(typeof(CategoryUpdateDTOValidator))]
+        [ValidationAspect(typeof(ProductUpdateDTOValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public async Task<IResult> Update(ProductUpdateDTO updatedDto)
         {
@@ -53,7 +54,9 @@ namespace Application.Features.Products.Rules
                 return new ErrorResult($"Böyle Bir {ProductMessagesTR.Product} {BaseConstantsTR.ID} {BaseConstantsTR.NotFound}");
 
             var product = Mapper.Map<Product>(result);
+            product.UpdatedDate = DateTime.Now;
             await Task.Run(() => DbContext.Products.Update(product));
+            await DbContext.SaveChangesAsync();
             return new SuccessResult(ProductMessagesTR.ProductUpdated);
         }
 

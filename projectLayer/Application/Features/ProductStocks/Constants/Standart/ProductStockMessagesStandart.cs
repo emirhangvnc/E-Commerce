@@ -31,6 +31,10 @@ namespace projectLayer.Application.Features.ProductStocks.Constants.Standart
             {
                 return $"{ProductStockMessagesStandart.ProductStock} {BaseConstantsStandart.Updated}";
             }
+            internal virtual string ProductStockAdded()
+            {
+                return $"{ProductStockMessagesStandart.ProductStock} {BaseConstantsStandart.Added}";
+            }
             internal virtual string ProductStockDeleted()
             {
                 return $"{ProductStockMessagesStandart.ProductStock} {BaseConstantsStandart.Deleted}";
@@ -46,6 +50,7 @@ namespace projectLayer.Application.Features.ProductStocks.Constants.Standart
         internal static string ProductStocksListed = worker.ProductStocksListed();
         internal static string ProductStockDeleted = worker.ProductStockDeleted();
         internal static string ProductStockUpdated = worker.ProductStockUpdated();
+        internal static string ProductStockAdded = worker.ProductStockAdded();
         internal static string ProductStocktNotFound = worker.ProductStocktNotFound();
     }
 }

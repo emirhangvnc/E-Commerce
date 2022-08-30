@@ -8,10 +8,20 @@ namespace projectLayer.Persistence.Contexts
     {
         protected IConfiguration Configuration { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<BrandImage> BrandImages { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Feature> Feature { get; set; }
+        public DbSet<FeatureValue> FeatureValues { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<ProductFeature> ProductFeatures { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {

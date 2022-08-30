@@ -32,6 +32,10 @@ namespace projectLayer.Application.Features.ProductStocks.Constants.Languages.TR
             {
                 return $"{ProductStockMessagesTR.ProductStock} {BaseConstantsTR.Updated}";
             }
+            internal override string ProductStockAdded()
+            {
+                return $"{ProductStockMessagesTR.ProductStock} {BaseConstantsTR.Added}";
+            }
             internal override string ProductStockDeleted()
             {
                 return $"{ProductStockMessagesTR.ProductStock} {BaseConstantsTR.Deleted}";
@@ -47,6 +51,7 @@ namespace projectLayer.Application.Features.ProductStocks.Constants.Languages.TR
         internal static string ProductStocksListed = worker.ProductStocksListed();
         internal static string ProductStockDeleted = worker.ProductStockDeleted();
         internal static string ProductStockUpdated = worker.ProductStockUpdated();
+        internal static string ProductStockAdded = worker.ProductStockAdded();
         internal static string ProductStocktNotFound = worker.ProductStocktNotFound();
     }
 }

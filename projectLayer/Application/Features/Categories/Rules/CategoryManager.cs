@@ -56,6 +56,7 @@ namespace projectLayer.Application.Features.Categories.Rules
 
             var category = Mapper.Map<Category>(result);
             await Task.Run(() => DbContext.Categories.Update(category));
+            await DbContext.SaveChangesAsync();
             return new SuccessResult(CategoryMessagesTR.CategoryUpdated);
         }
 

@@ -9,7 +9,7 @@ namespace projectLayer.Application.Features.ProductStocks.Validations.TR
     {
         public ProductStockDeleteDTOValidator()
         {
-            RuleFor(c => c.Id).NotEmpty().WithMessage($"{ProductStockMessagesTR.ProductStock} {BaseConstantsTR.ID} {BaseConstantsTR.NotNull}");
+            RuleFor(c => c.ProductId).NotEmpty().WithMessage($"{ProductStockMessagesTR.ProductStock} {BaseConstantsTR.ID} {BaseConstantsTR.NotNull}");
         }
     }
 }

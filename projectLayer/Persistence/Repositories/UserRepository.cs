@@ -5,9 +5,9 @@ using projectLayer.Domain.Entities;
 
 namespace projectLayer.Persistence.Repositories
 {
-    public class BrandRepository : EfRepositoryBase<Brand, BaseDbContext>, IBrandRepository
+    public class UserRepository : EfRepositoryBase<User, BaseDbContext>, IUserRepository
     {
-        public BrandRepository(BaseDbContext context) : base(context)
+        public UserRepository(BaseDbContext context) : base(context)
         {
         }
     }

@@ -1,6 +1,6 @@
 ﻿using coreLayer.Permanency.Repositories;
 using projectLayer.Persistence.Contexts;
-using projectLayer.Application.Services.Repositories;
+using projectLayer.Persistence.Services.Repositories;
 using projectLayer.Domain.Entities;
 
 namespace projectLayer.Persistence.Repositories
