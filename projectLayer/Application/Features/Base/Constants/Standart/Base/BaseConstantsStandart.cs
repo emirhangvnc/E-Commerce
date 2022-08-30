@@ -117,6 +117,10 @@ namespace projectLayer.Application.Features.Base.Constants.Standart.Base
             {
                 return "Date Of Birth";
             }
+            internal virtual string Stock()
+            {
+                return "Stock";
+            }
         }
         readonly static BaseWorker worker = new BaseWorker();
         internal static string NotNull = worker.NotNull();
@@ -147,5 +151,6 @@ namespace projectLayer.Application.Features.Base.Constants.Standart.Base
         internal static string LastName = worker.LastName();
         internal static string EMail = worker.EMail();
         internal static string DateOfBirth = worker.DateOfBirth();
+        internal static string Stock = worker.Stock();
     }
 }

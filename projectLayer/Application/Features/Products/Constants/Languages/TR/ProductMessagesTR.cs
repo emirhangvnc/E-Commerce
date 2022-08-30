@@ -44,7 +44,7 @@ namespace projectLayer.Application.Features.Products.Constants.Languages.TR
         public static string Product = worker.Product();
         public static string ProductNameNotNull = worker.ProductNameNotNull();
         public static string ProductListed = worker.ProductListed();
-        public static string Productsted = worker.ProductsListed();
+        public static string ProductsListed = worker.ProductsListed();
         public static string ProductAdded = worker.ProductAdded();
         public static string ProductDeleted = worker.ProductDeleted();
         public static string ProductUpdated = worker.ProductUpdated();

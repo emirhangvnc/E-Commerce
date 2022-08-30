@@ -114,6 +114,10 @@ namespace projectLayer.Application.Features.Base.Constants.Languages.TR.Base
             {
                 return "Doğum Günü";
             }
+            internal override string Stock()
+            {
+                return "Stok";
+            }
         }
         readonly static TRWorker worker = new TRWorker();
         public static string NotNull = worker.NotNull();
@@ -144,5 +148,6 @@ namespace projectLayer.Application.Features.Base.Constants.Languages.TR.Base
         public static string LastName = worker.LastName();
         public static string EMail = worker.EMail();
         public static string DateOfBirth = worker.DateOfBirth();
+        public static string Stock = worker.Stock();
     }
 }
