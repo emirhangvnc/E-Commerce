@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text.RegularExpressions;
-using coreLayer.Utilities.IoC;
+using Core.Utilities.IoC;
 
-namespace coreLayer.CCC.Caching.Microsoft
+namespace Core.CCC.Caching.Microsoft
 {
     public class MemoryCacheManager : ICacheManager
     {

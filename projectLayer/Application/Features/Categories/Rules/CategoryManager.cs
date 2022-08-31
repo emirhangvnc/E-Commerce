@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Castle.Core.Resource;
-using coreLayer.Aspects.Validation;
-using coreLayer.Permanency.Paging;
-using coreLayer.Utilities.Results;
+using Core.Aspects.Validation;
+using Core.Utilities.Results;
 using Microsoft.EntityFrameworkCore;
 using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using projectLayer.Application.Features.Base.Rules;
@@ -12,7 +10,6 @@ using projectLayer.Application.Features.Categories.Validations.TR;
 using projectLayer.Application.Services.Abstract;
 using projectLayer.Domain.Entities;
 using projectLayer.Persistence.Contexts;
-using System;
 
 namespace projectLayer.Application.Features.Categories.Rules
 {

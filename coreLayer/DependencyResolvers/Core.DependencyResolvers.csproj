@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CCC\CCC.csproj" />
-    <ProjectReference Include="..\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\CCC\Core.CCC.csproj" />
+    <ProjectReference Include="..\Utilities\Core.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

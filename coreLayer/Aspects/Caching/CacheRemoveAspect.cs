@@ -1,10 +1,10 @@
 ﻿using Castle.DynamicProxy;
-using coreLayer.CCC.Caching;
-using coreLayer.Utilities.Interceptors;
-using coreLayer.Utilities.IoC;
+using Core.CCC.Caching;
+using Core.Utilities.Interceptors;
+using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace coreLayer.Aspects.Caching
+namespace Core.Aspects.Caching
 {
     public class CacheRemoveAspect : MethodInterception
     {

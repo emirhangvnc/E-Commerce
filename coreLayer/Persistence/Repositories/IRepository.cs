@@ -1,8 +1,8 @@
-﻿using coreLayer.Permanency.Paging;
+﻿using Core.Persistence.Paging;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
-namespace coreLayer.Permanency.Repositories
+namespace Core.Persistence.Repositories
 {
     public interface IRepository<T> : IQuery<T> where T : Entity
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace coreLayer.Permanency.Repositories
+namespace Core.Persistence.Repositories
 {
     public class Entity
     {

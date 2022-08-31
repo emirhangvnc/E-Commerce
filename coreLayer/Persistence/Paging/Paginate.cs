@@ -1,5 +1,5 @@
 ﻿
-namespace coreLayer.Permanency.Paging
+namespace Core.Persistence.Paging
 {
     public class Paginate<T> : IPaginate<T>
     {

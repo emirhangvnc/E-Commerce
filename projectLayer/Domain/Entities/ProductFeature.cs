@@ -1,4 +1,4 @@
-﻿using coreLayer.Permanency.Repositories;
+﻿using Core.Persistence.Repositories;
 
 namespace projectLayer.Domain.Entities
 {

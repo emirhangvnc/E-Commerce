@@ -1,6 +1,6 @@
-﻿using coreLayer.Utilities.Results;
+﻿using Core.Utilities.Results;
 
-namespace coreLayer.Utilities.Business
+namespace Core.Utilities.Business
 {
     public class BusinessRules
     {

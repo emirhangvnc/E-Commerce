@@ -1,5 +1,5 @@
 ﻿
-namespace coreLayer.CCC.Caching
+namespace Core.CCC.Caching
 {
     public interface ICacheManager
     {

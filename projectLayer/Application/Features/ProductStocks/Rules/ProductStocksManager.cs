@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using coreLayer.Utilities.Results;
+using Core.Utilities.Results;
 using Microsoft.EntityFrameworkCore;
 using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using projectLayer.Application.Features.Base.Rules;

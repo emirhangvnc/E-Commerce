@@ -1,5 +1,5 @@
 ﻿
-namespace coreLayer.Permanency.Paging
+namespace Core.Persistence.Paging
 {
     public interface IPaginate<T>
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace coreLayer.Extensions
+namespace Core.Extensions
 {
     public class ExceptionMiddleware
     {

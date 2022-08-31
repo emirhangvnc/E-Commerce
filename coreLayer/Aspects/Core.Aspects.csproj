@@ -8,12 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.2.1" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\CCC\Core.CCC.csproj" />
+    <ProjectReference Include="..\Utilities\Core.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

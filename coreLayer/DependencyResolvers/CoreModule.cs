@@ -1,10 +1,10 @@
-﻿using coreLayer.CCC.Caching;
-using coreLayer.CCC.Caching.Microsoft;
-using coreLayer.Utilities.IoC;
+﻿using Core.CCC.Caching;
+using Core.CCC.Caching.Microsoft;
+using Core.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DependencyResolvers
+namespace Core.DependencyResolvers
 {
     public class CoreModule : ICoreModule
     {

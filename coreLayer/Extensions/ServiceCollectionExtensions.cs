@@ -1,7 +1,7 @@
-﻿using coreLayer.Utilities.IoC;
+﻿using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace coreLayer.Extensions
+namespace Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {

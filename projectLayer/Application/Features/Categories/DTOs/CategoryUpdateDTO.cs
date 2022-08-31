@@ -1,5 +1,5 @@
-﻿using coreLayer.Permanency.Paging;
-using coreLayer.Permanency.Repositories;
+﻿using Core.Persistence.Paging;
+using Core.Persistence.Repositories;
 
 namespace projectLayer.Application.Features.Categories.DTOs
 {

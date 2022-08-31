@@ -1,9 +1,9 @@
 ﻿using Castle.DynamicProxy;
-using coreLayer.CCC;
-using coreLayer.Utilities.Interceptors;
+using Core.CCC;
+using Core.Utilities.Interceptors;
 using FluentValidation;
 
-namespace coreLayer.Aspects.Validation
+namespace Core.Aspects.Validation
 {
     public class ValidationAspect : MethodInterception
     {

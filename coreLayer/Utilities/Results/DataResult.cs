@@ -1,6 +1,6 @@
-﻿using coreLayer.Utilities.Results;
+﻿using Core.Utilities.Results;
 
-namespace coreLayer.Utilities.Results
+namespace Core.Utilities.Results
 {
     public class DataResult<T> : Result, IDataResult<T>
     {

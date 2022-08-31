@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace coreLayer.Extensions
+namespace Core.Extensions
 {
     public class ErrorDetails
     {

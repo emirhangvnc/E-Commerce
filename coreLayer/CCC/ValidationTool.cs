@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace coreLayer.CCC
+namespace Core.CCC
 {
     public static class ValidationTool
     {

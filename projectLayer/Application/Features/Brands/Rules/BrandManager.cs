@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using coreLayer.Aspects.Validation;
-using coreLayer.Utilities.Results;
+using Core.Aspects.Validation;
+using Core.Utilities.Results;
 using Microsoft.EntityFrameworkCore;
 using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using projectLayer.Application.Features.Base.Rules;
