@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using Core.Aspects.Caching;
-using Core.Aspects.Validation;
-using Core.Utilities.Results;
+using Core.Security.Results;
+using Core.Security.Results;
 using Microsoft.EntityFrameworkCore;
 using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using projectLayer.Application.Features.Base.Rules;
@@ -11,6 +10,7 @@ using projectLayer.Application.Features.Products.Validations.TR;
 using projectLayer.Application.Services.Abstract;
 using projectLayer.Domain.Entities;
 using projectLayer.Persistence.Contexts;
+using static Core.Application.Pipelines.Validation.ValidationTool;
 
 namespace projectLayer.Application.Features.Products.Rules
 {
@@ -21,7 +21,6 @@ namespace projectLayer.Application.Features.Products.Rules
         }
 
         [ValidationAspect(typeof(ProductAddDTOValidator))]
-        [CacheRemoveAspect("IProductService.Get")]
         public async Task<IResult> Add(ProductAddDTO addedDto)
         {
             var product = Mapper.Map<Product>(addedDto);
@@ -33,7 +32,6 @@ namespace projectLayer.Application.Features.Products.Rules
 
         //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductDeleteDTOValidator))]
-        [CacheRemoveAspect("IProductService.Get")]
         public async Task<IResult> Delete(ProductDeleteDTO deletedDto)
         {
             var product = await DbContext.Products.SingleOrDefaultAsync(b => b.Id == deletedDto.Id);
@@ -46,7 +44,6 @@ namespace projectLayer.Application.Features.Products.Rules
         }
 
         [ValidationAspect(typeof(ProductUpdateDTOValidator))]
-        [CacheRemoveAspect("IProductService.Get")]
         public async Task<IResult> Update(ProductUpdateDTO updatedDto)
         {
             var result = await DbContext.Products.SingleOrDefaultAsync(b => b.Id == updatedDto.Id);
@@ -60,7 +57,6 @@ namespace projectLayer.Application.Features.Products.Rules
             return new SuccessResult(ProductMessagesTR.ProductUpdated);
         }
 
-        [CacheAspect]
         public async Task<IDataResult<List<Product>>> GetAll()
         {
             IQueryable<Product> result = DbContext.Set<Product>();
@@ -68,7 +64,6 @@ namespace projectLayer.Application.Features.Products.Rules
             return new SuccessDataResult<List<Product>>(products, ProductMessagesTR.ProductsListed);
         }
 
-        [CacheAspect]
         public async Task<IDataResult<Product>> GetById(int id)
         {
             var product = await DbContext.Products.SingleOrDefaultAsync(b => b.Id == id);

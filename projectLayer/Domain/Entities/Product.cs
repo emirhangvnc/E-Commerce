@@ -15,7 +15,7 @@ namespace projectLayer.Domain.Entities
         public ICollection<ProductCategory> ProductCategories { get; set; }
         public ICollection<ProductFeature> ProductFeatures { get; set; }
 
-        public Product(int categoryId, string productName, decimal price, decimal listPrice, DateTime createdDate,DateTime updatedDate)
+        public Product(int id, int categoryId, string productName, decimal price, decimal listPrice, DateTime createdDate,DateTime updatedDate):base(id)
         {
             CategoryId = categoryId;
             ProductName = productName;
@@ -23,11 +23,6 @@ namespace projectLayer.Domain.Entities
             ListPrice = listPrice;
             CreatedDate= createdDate;
             UpdatedDate = updatedDate;
-        }
-
-        public Product(int id, int categoryId, string productName, decimal price, decimal listPrice, DateTime createdDate, DateTime updatedDate) : this(categoryId, productName, price, listPrice, createdDate, updatedDate)
-        {
-            Id = id;
         }
     }
 }

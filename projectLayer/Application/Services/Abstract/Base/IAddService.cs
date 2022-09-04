@@ -1,5 +1,5 @@
 ﻿using Core.Persistence.Repositories;
-using Core.Utilities.Results;
+using Core.Security.Results;
 
 namespace projectLayer.Application.Services.Abstract.Base
 {

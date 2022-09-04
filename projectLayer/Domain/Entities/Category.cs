@@ -6,14 +6,9 @@ namespace projectLayer.Domain.Entities
     {
         public string CategoryName { get; set; }
 
-        public Category(string categoryName)
+        public Category(int id, string categoryName) : base(id)
         {
             CategoryName = categoryName;
-        }
-
-        public Category(int id, string categoryName) :this(categoryName)
-        {
-            Id = id;
         }
     }
 }

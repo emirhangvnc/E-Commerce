@@ -5,14 +5,9 @@ namespace projectLayer.Domain.Entities
     public class Brand:Entity
     {
         public string BrandName { get; set; }
-        public Brand(string brandName)
+        public Brand(int id, string brandName) : base(id)
         {
             BrandName = brandName;
-        }
-
-        public Brand(int id, string brandName) : this(brandName)
-        {
-            Id = id;
         }
     }
 }

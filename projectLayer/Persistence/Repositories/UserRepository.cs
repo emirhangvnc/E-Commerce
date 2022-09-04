@@ -1,7 +1,7 @@
 ﻿using Core.Persistence.Repositories;
 using projectLayer.Persistence.Contexts;
 using projectLayer.Persistence.Services.Repositories;
-using projectLayer.Domain.Entities;
+using Core.Security.Entities;
 
 namespace projectLayer.Persistence.Repositories
 {

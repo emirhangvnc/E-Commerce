@@ -6,15 +6,10 @@ namespace projectLayer.Domain.Entities
     {
         public int ProductId { get; set; }
         public int FeatureValueId { get; set; }
-        public ProductFeature(int productId, int featureValueId)
+        public ProductFeature(int id,int productId, int featureValueId):base(id)
         {
             ProductId = productId;
             FeatureValueId = featureValueId;
-        }
-
-        public ProductFeature(int id, int productId, int featureValueId) : this(productId, featureValueId)
-        {
-            Id = id;
         }
     }
 }

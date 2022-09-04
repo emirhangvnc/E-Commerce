@@ -10,18 +10,13 @@ namespace projectLayer.Domain.Entities
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
 
-        public ProductImage(int productId, string fileName, string filePath, DateTime createdDate, DateTime updatedDate)
+        public ProductImage(int id,int productId, string fileName, string filePath, DateTime createdDate, DateTime updatedDate):base(id)
         {
             ProductId = productId;
             FileName = fileName;
             FilePath = filePath;
             CreatedDate = createdDate;
             UpdatedDate = updatedDate;
-        }
-
-        public ProductImage(int id, int productId, string fileName, string filePath, DateTime createdDate, DateTime updatedDate) : this(productId, fileName, filePath, createdDate, updatedDate)
-        {
-            Id = id;
         }
     }
 }

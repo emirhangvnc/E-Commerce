@@ -1,15 +1,34 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using Core.Application.Requests;
+using Core.Persistence.Paging;
+using MediatR;
 using projectLayer.Application.Features.Brands.Models;
+using projectLayer.Domain.Entities;
+using projectLayer.Persistence.Services.Repositories;
 
 namespace projectLayer.Application.Features.Brands.Queries.GetListBrand
 {
-    public class GetListBrandQuery:IRequest<BrandListModel>
+    public class GetListBrandQuery : IRequest<BrandListModel>
     {
+        public PageRequest PageRequest { get; set; }
         public class GetListBrandQueryHandler : IRequestHandler<GetListBrandQuery, BrandListModel>
         {
-            public Task<BrandListModel> Handle(GetListBrandQuery request, CancellationToken cancellationToken)
+            private readonly IBrandRepository _brandRepository;
+            private readonly IMapper _mapper;
+
+            public GetListBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper)
             {
-                throw new NotImplementedException();
+                _brandRepository = brandRepository;
+                _mapper = mapper;
+            }
+
+            public async Task<BrandListModel> Handle(GetListBrandQuery request, CancellationToken cancellationToken)
+            {
+                IPaginate<Brand> brands = await _brandRepository.GetListAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
+
+                BrandListModel mappedBrandListModel = _mapper.Map<BrandListModel>(brands);
+
+                return mappedBrandListModel;
             }
         }
     }

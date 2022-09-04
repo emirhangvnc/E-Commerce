@@ -11,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CCC\Core.CCC.csproj" />
-    <ProjectReference Include="..\Utilities\Core.Utilities.csproj" />
+    <ProjectReference Include="..\CCC\Core.CrossCuttingConcers.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using Core.Aspects.Validation;
-using Core.Utilities.Results;
+using Core.Security.Results;
 using Microsoft.EntityFrameworkCore;
 using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using projectLayer.Application.Features.Base.Rules;
@@ -10,6 +9,7 @@ using projectLayer.Application.Features.Categories.Validations.TR;
 using projectLayer.Application.Services.Abstract;
 using projectLayer.Domain.Entities;
 using projectLayer.Persistence.Contexts;
+using static Core.Application.Pipelines.Validation.ValidationTool;
 
 namespace projectLayer.Application.Features.Categories.Rules
 {

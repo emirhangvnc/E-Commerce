@@ -5,14 +5,9 @@ namespace projectLayer.Domain.Entities
     public class Feature:Entity
     {
         public string FeatureName { get; set; }
-        public Feature(string featureName)
+        public Feature(int id, string featureName) : base(id)
         {
             FeatureName = featureName;
-        }
-
-        public Feature(int id, string featureName):this(featureName)
-        {
-            Id = id;
         }
     }
 }

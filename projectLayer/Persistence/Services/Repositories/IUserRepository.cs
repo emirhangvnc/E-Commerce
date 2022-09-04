@@ -1,5 +1,5 @@
 ﻿using Core.Persistence.Repositories;
-using projectLayer.Domain.Entities;
+using Core.Security.Entities;
 
 namespace projectLayer.Persistence.Services.Repositories
 {

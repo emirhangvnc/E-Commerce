@@ -8,7 +8,7 @@ namespace projectLayer.Domain.Entities
         public int UnitStock { get; set; }
         public DateTime UpdatedDate { get; set; }
 
-        public ProductStock(int id,int productId, int unitStock, DateTime updatedDate)
+        public ProductStock(int id,int productId, int unitStock, DateTime updatedDate):base(id)
         {
             ProductId = productId;
             UnitStock = unitStock;
