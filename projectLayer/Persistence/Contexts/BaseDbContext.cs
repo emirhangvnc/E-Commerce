@@ -1,9 +1,9 @@
 ﻿using Core.Security.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using projectLayer.Domain.Entities;
+using eCommerceLayer.Domain.Entities;
 
-namespace projectLayer.Persistence.Contexts
+namespace eCommerceLayer.Persistence.Contexts
 {
     public class BaseDbContext : DbContext
     {

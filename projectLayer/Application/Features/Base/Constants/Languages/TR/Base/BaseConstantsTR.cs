@@ -1,6 +1,6 @@
-﻿using projectLayer.Application.Features.Base.Constants.Standart.Base;
+﻿using eCommerceLayer.Application.Features.Base.Constants.Standart.Base;
 
-namespace projectLayer.Application.Features.Base.Constants.Languages.TR.Base
+namespace eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base
 {
     public static class BaseConstantsTR
     {
@@ -118,6 +118,10 @@ namespace projectLayer.Application.Features.Base.Constants.Languages.TR.Base
             {
                 return "Stok";
             }
+            internal override string Character()
+            {
+                return "Character";
+            }
         }
         readonly static TRWorker worker = new TRWorker();
         public static string NotNull = worker.NotNull();
@@ -149,5 +153,6 @@ namespace projectLayer.Application.Features.Base.Constants.Languages.TR.Base
         public static string EMail = worker.EMail();
         public static string DateOfBirth = worker.DateOfBirth();
         public static string Stock = worker.Stock();
+        public static string Character = worker.Character();
     }
 }

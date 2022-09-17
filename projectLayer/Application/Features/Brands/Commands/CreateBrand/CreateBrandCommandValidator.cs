@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace projectLayer.Application.Features.Brands.Commands.CreateBrand
+namespace eCommerceLayer.Application.Features.Brands.Commands.CreateBrand
 {
     public class CreateBrandCommandValidator : AbstractValidator<CreateBrandCommand>
     {

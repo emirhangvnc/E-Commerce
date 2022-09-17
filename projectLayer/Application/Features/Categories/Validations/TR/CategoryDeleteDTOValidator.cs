@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Categories.Constants.Languages.TR;
-using projectLayer.Application.Features.Categories.DTOs;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Categories.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Categories.DTOs;
 
-namespace projectLayer.Application.Features.Categories.Validations.TR
+namespace eCommerceLayer.Application.Features.Categories.Validations.TR
 {
     public class CategoryDeleteDTOValidator : AbstractValidator<CategoryDeleteDTO>
     {

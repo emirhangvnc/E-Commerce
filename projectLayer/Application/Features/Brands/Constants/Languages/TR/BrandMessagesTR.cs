@@ -1,7 +1,7 @@
-﻿using Application.Features.Brands.Constants.Standart;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
+﻿using eCommerceLayer.Application.Features.Brands.Constants.Standart;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
 
-namespace projectLayer.Application.Features.Brands.Constants.Languages.TR
+namespace eCommerceLayer.Application.Features.Brands.Constants.Languages.TR
 {
     public static class BrandMessagesTR
     {

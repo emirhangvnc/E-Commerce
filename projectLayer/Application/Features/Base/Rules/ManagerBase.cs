@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using projectLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Contexts;
 
-namespace projectLayer.Application.Features.Base.Rules
+namespace eCommerceLayer.Application.Features.Base.Rules
 {
     public class ManagerBase
     {

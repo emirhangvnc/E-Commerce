@@ -1,8 +1,8 @@
-﻿using projectLayer.Application.Features.Brands.DTOs;
-using projectLayer.Application.Services.Abstract.Base;
-using projectLayer.Domain.Entities;
+﻿using eCommerceLayer.Application.Features.Brands.DTOs;
+using eCommerceLayer.Application.Services.Abstract.Base;
+using eCommerceLayer.Domain.Entities;
 
-namespace projectLayer.Application.Services.Abstract
+namespace eCommerceLayer.Application.Services.Abstract
 {
     public interface IBrandService : IBaseService<Brand,
         BrandAddDTO, BrandDeleteDTO, BrandUpdateDTO>

@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
 using Core.Security.Results;
 using Microsoft.EntityFrameworkCore;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Base.Rules;
-using projectLayer.Application.Features.Categories.Constants.Languages.TR;
-using projectLayer.Application.Features.Categories.DTOs;
-using projectLayer.Application.Features.Categories.Validations.TR;
-using projectLayer.Application.Services.Abstract;
-using projectLayer.Domain.Entities;
-using projectLayer.Persistence.Contexts;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Base.Rules;
+using eCommerceLayer.Application.Features.Categories.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Categories.Validations.TR;
+using eCommerceLayer.Application.Services.Abstract;
+using eCommerceLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;
+using eCommerceLayer.Application.Features.Categories.DTOs;
 
-namespace projectLayer.Application.Features.Categories.Rules
+namespace eCommerceLayer.Application.Features.Categories.Rules
 {
     public class CategoryManager : ManagerBase, ICategoryService
     {

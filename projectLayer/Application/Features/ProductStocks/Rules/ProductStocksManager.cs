@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using Core.Security.Results;
 using Microsoft.EntityFrameworkCore;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Base.Rules;
-using projectLayer.Application.Features.Products.Constants.Languages.TR;
-using projectLayer.Application.Features.ProductStocks.Constants.Languages.TR;
-using projectLayer.Application.Features.ProductStocks.DTOs;
-using projectLayer.Application.Services.Abstract;
-using projectLayer.Domain.Entities;
-using projectLayer.Persistence.Contexts;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Base.Rules;
+using eCommerceLayer.Application.Features.Products.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.ProductStocks.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.ProductStocks.DTOs;
+using eCommerceLayer.Application.Services.Abstract;
+using eCommerceLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Contexts;
 
-namespace projectLayer.Application.Features.ProductStocks.Rules
+namespace eCommerceLayer.Application.Features.ProductStocks.Rules
 {
     public class ProductStockManager : ManagerBase, IProductStockService
     {

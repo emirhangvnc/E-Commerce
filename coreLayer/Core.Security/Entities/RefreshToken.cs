@@ -1,13 +1,9 @@
 ﻿using Core.Persistence.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Core.Security.Entities.Base;
 
 namespace Core.Security.Entities
 {
-    public class RefreshToken : Entity
+    public class RefreshToken : IdBaseEntity, IEntity
     {
         public int UserId { get; set; }
         public string Token { get; set; }
@@ -24,23 +20,5 @@ namespace Core.Security.Entities
         //public bool IsActive => !IsRevoked && !IsExpired;
 
         public virtual User User { get; set; }
-
-        public RefreshToken()
-        {
-        }
-
-        public RefreshToken(int id, string token, DateTime expires, DateTime created, string createdByIp, DateTime? revoked,
-                            string revokedByIp, string replacedByToken, string reasonRevoked)
-        {
-            Id = id;
-            Token = token;
-            Expires = expires;
-            Created = created;
-            CreatedByIp = createdByIp;
-            Revoked = revoked;
-            RevokedByIp = revokedByIp;
-            ReplacedByToken = replacedByToken;
-            ReasonRevoked = reasonRevoked;
-        }
     }
 }

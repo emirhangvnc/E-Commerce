@@ -1,5 +1,4 @@
-﻿using Core.Persistence.Paging;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Core.Persistence.Paging
 {
@@ -25,7 +24,6 @@ namespace Core.Persistence.Paging
             };
             return list;
         }
-
 
         public static IPaginate<T> ToPaginate<T>(this IQueryable<T> source, int index, int size,
                                                  int from = 0)

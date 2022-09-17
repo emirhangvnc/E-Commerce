@@ -1,7 +1,7 @@
-﻿using Application.Features.Categories.Constants.Standart;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
+﻿using eCommerceLayer.Application.Features.Categories.Constants.Standart;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
 
-namespace projectLayer.Application.Features.Categories.Constants.Languages.TR
+namespace eCommerceLayer.Application.Features.Categories.Constants.Languages.TR
 {
     public static class CategoryMessagesTR
     {

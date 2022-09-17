@@ -1,12 +1,12 @@
 ﻿using Core.Application.Requests;
 using Microsoft.AspNetCore.Mvc;
-using projectLayer.Application.Features.Brands.Commands.CreateBrand;
-using projectLayer.Application.Features.Brands.DTOs;
-using projectLayer.Application.Features.Brands.Models;
-using projectLayer.Application.Features.Brands.Queries.GetByIdBrand;
-using projectLayer.Application.Features.Brands.Queries.GetListBrand;
+using eCommerceLayer.Application.Features.Brands.Commands.CreateBrand;
+using eCommerceLayer.Application.Features.Brands.DTOs;
+using eCommerceLayer.Application.Features.Brands.Models;
+using eCommerceLayer.Application.Features.Brands.Queries.GetByIdBrand;
+using eCommerceLayer.Application.Features.Brands.Queries.GetListBrand;
 
-namespace projectLayer.WebAPI.Controllers
+namespace eCommerceLayer.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

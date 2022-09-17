@@ -1,6 +1,4 @@
-﻿using Core.Persistence.Repositories;
-
-namespace Core.Persistence.Paging
+﻿namespace eCommerceLayer.Application.Features.Base.DTOs
 {
     public class DeleteDTO
     {

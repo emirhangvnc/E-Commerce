@@ -1,7 +1,7 @@
-﻿using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Products.Constants.Standart;
+﻿using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Products.Constants.Standart;
 
-namespace projectLayer.Application.Features.Products.Constants.Languages.TR
+namespace eCommerceLayer.Application.Features.Products.Constants.Languages.TR
 {
     public static class ProductMessagesTR
     {

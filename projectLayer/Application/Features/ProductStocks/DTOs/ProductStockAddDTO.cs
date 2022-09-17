@@ -1,6 +1,6 @@
 ﻿using Core.Persistence.Repositories;
 
-namespace projectLayer.Application.Features.ProductStocks.DTOs
+namespace eCommerceLayer.Application.Features.ProductStocks.DTOs
 {
     public class ProductStockAddDTO : IDTO
     {

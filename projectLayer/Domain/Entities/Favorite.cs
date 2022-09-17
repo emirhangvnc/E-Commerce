@@ -1,10 +1,11 @@
 ﻿using Core.Persistence.Repositories;
 using Core.Security.Entities;
+using eCommerceLayer.Domain.Entities.Base;
 using System.Reflection.Metadata;
 
-namespace projectLayer.Domain.Entities
+namespace eCommerceLayer.Domain.Entities
 {
-    public class Favorite : Entity
+    public class Favorite : BaseEntity, IEntity
     {
         public User User { get; set; }
         public int UserId { get; set; }

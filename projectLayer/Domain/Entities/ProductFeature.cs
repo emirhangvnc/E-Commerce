@@ -1,8 +1,9 @@
 ﻿using Core.Persistence.Repositories;
+using eCommerceLayer.Domain.Entities.Base;
 
-namespace projectLayer.Domain.Entities
+namespace eCommerceLayer.Domain.Entities
 {
-    public class ProductFeature : Entity
+    public class ProductFeature : BaseEntity, IEntity
     {
         public int ProductId { get; set; }
         public int FeatureValueId { get; set; }

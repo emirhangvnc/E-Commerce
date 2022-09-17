@@ -1,8 +1,9 @@
 ﻿using Core.Persistence.Repositories;
+using eCommerceLayer.Domain.Entities.Base;
 
-namespace projectLayer.Domain.Entities
+namespace eCommerceLayer.Domain.Entities
 {
-    public class Brand:Entity
+    public class Brand: BaseEntity,IEntity
     {
         public string BrandName { get; set; }
         public Brand(int id, string brandName) : base(id)

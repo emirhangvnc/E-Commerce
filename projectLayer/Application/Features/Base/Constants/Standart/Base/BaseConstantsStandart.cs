@@ -1,5 +1,4 @@
-﻿
-namespace projectLayer.Application.Features.Base.Constants.Standart.Base
+﻿namespace eCommerceLayer.Application.Features.Base.Constants.Standart.Base
 {
     internal static class BaseConstantsStandart
     {
@@ -121,6 +120,10 @@ namespace projectLayer.Application.Features.Base.Constants.Standart.Base
             {
                 return "Stock";
             }
+            internal virtual string Character()
+            {
+                return "Character";
+            }
         }
         readonly static BaseWorker worker = new BaseWorker();
         internal static string NotNull = worker.NotNull();
@@ -152,5 +155,6 @@ namespace projectLayer.Application.Features.Base.Constants.Standart.Base
         internal static string EMail = worker.EMail();
         internal static string DateOfBirth = worker.DateOfBirth();
         internal static string Stock = worker.Stock();
+        internal static string Character = worker.Character();
     }
 }

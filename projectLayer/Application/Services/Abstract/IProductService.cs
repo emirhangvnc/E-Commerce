@@ -1,8 +1,8 @@
-﻿using projectLayer.Application.Features.Products.DTOs;
-using projectLayer.Application.Services.Abstract.Base;
-using projectLayer.Domain.Entities;
+﻿using eCommerceLayer.Application.Features.Products.DTOs;
+using eCommerceLayer.Application.Services.Abstract.Base;
+using eCommerceLayer.Domain.Entities;
 
-namespace projectLayer.Application.Services.Abstract
+namespace eCommerceLayer.Application.Services.Abstract
 {
     public interface IProductService : IBaseService<Product,
         ProductAddDTO, ProductDeleteDTO, ProductUpdateDTO>

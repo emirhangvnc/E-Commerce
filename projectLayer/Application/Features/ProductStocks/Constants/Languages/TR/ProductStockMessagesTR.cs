@@ -1,8 +1,8 @@
-﻿using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Products.Constants.Standart;
-using projectLayer.Application.Features.ProductStocks.Constants.Standart;
+﻿using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Products.Constants.Standart;
+using eCommerceLayer.Application.Features.ProductStocks.Constants.Standart;
 
-namespace projectLayer.Application.Features.ProductStocks.Constants.Languages.TR
+namespace eCommerceLayer.Application.Features.ProductStocks.Constants.Languages.TR
 {
     public static class ProductStockMessagesTR
     {

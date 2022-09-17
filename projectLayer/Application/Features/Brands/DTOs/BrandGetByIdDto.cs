@@ -1,4 +1,4 @@
-﻿namespace projectLayer.Application.Features.Brands.DTOs
+﻿namespace eCommerceLayer.Application.Features.Brands.DTOs
 {
     public class BrandGetByIdDto
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using projectLayer.Application.Features.Categories.DTOs;
-using projectLayer.Domain.Entities;
+using eCommerceLayer.Application.Features.Categories.DTOs;
+using eCommerceLayer.Domain.Entities;
 
-namespace Application.Features.Categories.Profiles
+namespace v.Application.Features.Categories.Profiles
 {
     public class CategoryProfile : Profile
     {

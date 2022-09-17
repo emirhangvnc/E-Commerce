@@ -1,8 +1,9 @@
 ﻿using Core.Persistence.Repositories;
+using eCommerceLayer.Domain.Entities.Base;
 
-namespace projectLayer.Domain.Entities
+namespace eCommerceLayer.Domain.Entities
 {
-    public class BrandImage : Entity
+    public class BrandImage : BaseEntity, IEntity
     {
         public int BrandId { get; set; }
         public string FileName { get; set; }

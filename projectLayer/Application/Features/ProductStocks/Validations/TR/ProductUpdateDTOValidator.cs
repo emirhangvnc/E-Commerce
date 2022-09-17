@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Products.Constants.Languages.TR;
-using projectLayer.Application.Features.ProductStocks.Constants.Languages.TR;
-using projectLayer.Application.Features.ProductStocks.DTOs;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Products.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.ProductStocks.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.ProductStocks.DTOs;
 
-namespace projectLayer.Application.Features.ProductStocks.Validations.TR
+namespace eCommerceLayer.Application.Features.ProductStocks.Validations.TR
 {
     public class ProductStockUpdateDTOValidator : AbstractValidator<ProductStockUpdateDTO>
     {

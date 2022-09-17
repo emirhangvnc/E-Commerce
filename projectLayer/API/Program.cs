@@ -1,6 +1,6 @@
-using projectLayer.Application;
+using eCommerceLayer.Application;
 using Core.CrossCuttingConcers.Exceptions;
-using projectLayer.Persistence;
+using eCommerceLayer.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 

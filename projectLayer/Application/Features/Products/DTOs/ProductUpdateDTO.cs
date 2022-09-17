@@ -1,7 +1,7 @@
-﻿using Core.Persistence.Paging;
+﻿using eCommerceLayer.Application.Features.Base.DTOs;
 using Core.Persistence.Repositories;
 
-namespace projectLayer.Application.Features.Products.DTOs
+namespace eCommerceLayer.Application.Features.Products.DTOs
 {
     public class ProductUpdateDTO : UpdateDTO, IDTO
     {

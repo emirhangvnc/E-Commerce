@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace projectLayer.WebAPI.Controllers
+namespace eCommerceLayer.WebAPI.Controllers
 {
     public class BaseController : ControllerBase
     {

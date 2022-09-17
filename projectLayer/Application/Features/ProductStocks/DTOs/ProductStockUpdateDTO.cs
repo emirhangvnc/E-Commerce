@@ -1,7 +1,7 @@
 ﻿using Core.Persistence.Paging;
 using Core.Persistence.Repositories;
 
-namespace projectLayer.Application.Features.ProductStocks.DTOs
+namespace eCommerceLayer.Application.Features.ProductStocks.DTOs
 {
     public class ProductStockUpdateDTO : IDTO
     {

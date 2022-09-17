@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using projectLayer.Persistence.Contexts;
-using projectLayer.Persistence.Repositories;
-using projectLayer.Persistence.Services.Repositories;
+using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Repositories;
+using eCommerceLayer.Persistence.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace projectLayer.Persistence
+namespace eCommerceLayer.Persistence
 {
     public static class PersistenceServiceRegistration
     {

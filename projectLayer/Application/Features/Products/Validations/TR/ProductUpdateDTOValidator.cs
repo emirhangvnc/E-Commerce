@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using projectLayer.Application.Features.Products.DTOs;
+using eCommerceLayer.Application.Features.Products.DTOs;
 
-namespace projectLayer.Application.Features.Products.Validations.TR
+namespace eCommerceLayer.Application.Features.Products.Validations.TR
 {
     public class ProductUpdateDTOValidator : AbstractValidator<ProductUpdateDTO>
     {

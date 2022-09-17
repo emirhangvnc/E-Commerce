@@ -1,7 +1,7 @@
 ﻿using Core.Persistence.Paging;
-using projectLayer.Application.Features.Brands.DTOs;
+using eCommerceLayer.Application.Features.Brands.DTOs;
 
-namespace projectLayer.Application.Features.Brands.Models
+namespace eCommerceLayer.Application.Features.Brands.Models
 {
     public class BrandListModel:BasePageableModel
     {

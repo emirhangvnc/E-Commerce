@@ -1,6 +1,6 @@
 ﻿using Core.Persistence.Repositories;
 
-namespace projectLayer.Application.Features.Categories.DTOs
+namespace eCommerceLayer.Application.Features.Categories.DTOs
 {
     public class CategoryAddDTO : IDTO
     {

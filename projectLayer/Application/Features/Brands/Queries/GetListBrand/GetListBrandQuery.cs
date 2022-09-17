@@ -2,11 +2,11 @@
 using Core.Application.Requests;
 using Core.Persistence.Paging;
 using MediatR;
-using projectLayer.Application.Features.Brands.Models;
-using projectLayer.Domain.Entities;
-using projectLayer.Persistence.Services.Repositories;
+using eCommerceLayer.Application.Features.Brands.Models;
+using eCommerceLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Services.Repositories;
 
-namespace projectLayer.Application.Features.Brands.Queries.GetListBrand
+namespace eCommerceLayer.Application.Features.Brands.Queries.GetListBrand
 {
     public class GetListBrandQuery : IRequest<BrandListModel>
     {

@@ -1,18 +1,17 @@
 ﻿using AutoMapper;
 using Core.Security.Results;
-using Core.Security.Results;
 using Microsoft.EntityFrameworkCore;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Base.Rules;
-using projectLayer.Application.Features.Products.Constants.Languages.TR;
-using projectLayer.Application.Features.Products.DTOs;
-using projectLayer.Application.Features.Products.Validations.TR;
-using projectLayer.Application.Services.Abstract;
-using projectLayer.Domain.Entities;
-using projectLayer.Persistence.Contexts;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Base.Rules;
+using eCommerceLayer.Application.Features.Products.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Products.DTOs;
+using eCommerceLayer.Application.Services.Abstract;
+using eCommerceLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;
+using eCommerceLayer.Application.Features.Products.Validations.TR;
 
-namespace projectLayer.Application.Features.Products.Rules
+namespace eCommerceLayer.Application.Features.Products.Rules
 {
     public class ProductManager : ManagerBase, IProductService
     {

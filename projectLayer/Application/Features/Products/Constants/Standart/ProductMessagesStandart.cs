@@ -1,6 +1,6 @@
-﻿using projectLayer.Application.Features.Base.Constants.Standart.Base;
+﻿using eCommerceLayer.Application.Features.Base.Constants.Standart.Base;
 
-namespace projectLayer.Application.Features.Products.Constants.Standart
+namespace eCommerceLayer.Application.Features.Products.Constants.Standart
 {
     internal static class ProductMessagesStandart
     {

@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.General;
-using projectLayer.Application.Features.Categories.Constants.Languages.TR;
-using projectLayer.Application.Features.Products.Constants.Languages.TR;
-using projectLayer.Application.Features.Products.DTOs;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.General;
+using eCommerceLayer.Application.Features.Categories.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Products.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Products.DTOs;
 
-namespace projectLayer.Application.Features.Products.Validations.TR
+namespace eCommerceLayer.Application.Features.Products.Validations.TR
 {
     public class ProductAddDTOValidator : AbstractValidator<ProductAddDTO>
     {

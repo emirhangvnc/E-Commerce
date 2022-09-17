@@ -1,11 +1,13 @@
-﻿using projectLayer.Application.Features.Brands.Rules;
+﻿using eCommerceLayer.Application.Features.Brands.Rules;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using eCommerceLayer.Application.Services.Abstract;
+using eCommerceLayer.Application.Features.Categories.Rules;
 
-namespace projectLayer.Application
+namespace eCommerceLayer.Application
 {
     public static class ApplicationServiceRegistration
     {
@@ -23,6 +25,8 @@ namespace projectLayer.Application
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+
+            services.AddScoped<ICategoryService, CategoryManager>();
 
             return services;
 

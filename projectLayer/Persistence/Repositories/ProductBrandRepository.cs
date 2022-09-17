@@ -1,9 +1,9 @@
 ﻿using Core.Persistence.Repositories;
-using projectLayer.Persistence.Contexts;
-using projectLayer.Persistence.Services.Repositories;
-using projectLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Services.Repositories;
+using eCommerceLayer.Domain.Entities;
 
-namespace projectLayer.Persistence.Repositories
+namespace eCommerceLayer.Persistence.Repositories
 {
     public class ProductBrandRepository : EfRepositoryBase<ProductBrand, BaseDbContext>, IProductBrandRepository
     {

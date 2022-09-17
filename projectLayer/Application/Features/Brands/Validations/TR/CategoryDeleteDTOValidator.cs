@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using projectLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using projectLayer.Application.Features.Brands.Constants.Languages.TR;
-using projectLayer.Application.Features.Brands.DTOs;
+using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
+using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Brands.DTOs;
 
-namespace projectLayer.Application.Features.Brands.Validations.TR
+namespace eCommerceLayer.Application.Features.Brands.Validations.TR
 {
     public class BrandDeleteDTOValidator : AbstractValidator<BrandDeleteDTO>
     {

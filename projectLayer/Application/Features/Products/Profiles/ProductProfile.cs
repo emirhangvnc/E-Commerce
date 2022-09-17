@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using projectLayer.Application.Features.Products.DTOs;
-using projectLayer.Domain.Entities;
+using eCommerceLayer.Application.Features.Products.DTOs;
+using eCommerceLayer.Domain.Entities;
 
-namespace projectLayer.Application.Features.Products.Profiles
+namespace eCommerceLayer.Application.Features.Products.Profiles
 {
     public class ProductProfile : Profile
     {

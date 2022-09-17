@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
-using projectLayer.Application.Features.Brands.DTOs;
-using projectLayer.Application.Features.Brands.Rules;
-using projectLayer.Domain.Entities;
-using projectLayer.Persistence.Services.Repositories;
+using eCommerceLayer.Application.Features.Brands.DTOs;
+using eCommerceLayer.Application.Features.Brands.Rules;
+using eCommerceLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Services.Repositories;
 
-namespace projectLayer.Application.Features.Brands.Commands.CreateBrand
+namespace eCommerceLayer.Application.Features.Brands.Commands.CreateBrand
 {
     public partial class CreateBrandCommand : IRequest<BrandAddDTO>
     {

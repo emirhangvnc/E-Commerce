@@ -1,7 +1,7 @@
-﻿using Core.Persistence.Paging;
+﻿using eCommerceLayer.Application.Features.Base.DTOs;
 using Core.Persistence.Repositories;
 
-namespace projectLayer.Application.Features.Categories.DTOs
+namespace eCommerceLayer.Application.Features.Categories.DTOs
 {
     public class CategoryDeleteDTO : DeleteDTO, IDTO
     {
