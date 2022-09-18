@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Concrete.Contexts;
 
 namespace eCommerceLayer.Application.Features.Base.Rules
 {

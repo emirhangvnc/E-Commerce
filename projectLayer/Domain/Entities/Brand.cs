@@ -6,9 +6,7 @@ namespace eCommerceLayer.Domain.Entities
     public class Brand: BaseEntity,IEntity
     {
         public string BrandName { get; set; }
-        public Brand(int id, string brandName) : base(id)
-        {
-            BrandName = brandName;
-        }
+        public ICollection<BrandImage> BrandImages { get; set; }
+        public ICollection<ProductBrand> ProductBrands { get; set; }
     }
 }

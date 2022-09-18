@@ -3,8 +3,9 @@ using Core.Security.Entities.Base;
 
 namespace Core.Security.Entities
 {
-    public class RefreshToken : IdBaseEntity, IEntity
+    public class RefreshToken : IdBaseEntity
     {
+        public User User { get; set; }
         public int UserId { get; set; }
         public string Token { get; set; }
         public DateTime Expires { get; set; }
@@ -19,6 +20,5 @@ namespace Core.Security.Entities
         //public bool IsRevoked => Revoked != null;
         //public bool IsActive => !IsRevoked && !IsExpired;
 
-        public virtual User User { get; set; }
     }
 }

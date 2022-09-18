@@ -1,7 +1,7 @@
 ﻿using Core.Persistence.Repositories;
-using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Domain.Entities;
+using eCommerceLayer.Persistence.Concrete.Contexts;
 using eCommerceLayer.Persistence.Services.Repositories;
-using Core.Security.Entities;
 
 namespace eCommerceLayer.Persistence.Repositories
 {

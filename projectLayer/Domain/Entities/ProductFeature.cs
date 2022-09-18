@@ -5,12 +5,9 @@ namespace eCommerceLayer.Domain.Entities
 {
     public class ProductFeature : BaseEntity, IEntity
     {
+        public Product Product { get; set; }
         public int ProductId { get; set; }
+        public FeatureValue FeatureValue { get; set; }
         public int FeatureValueId { get; set; }
-        public ProductFeature(int id,int productId, int featureValueId):base(id)
-        {
-            ProductId = productId;
-            FeatureValueId = featureValueId;
-        }
     }
 }

@@ -9,7 +9,7 @@ using eCommerceLayer.Application.Features.Brands.Validations.TR;
 using eCommerceLayer.Application.Features.Categories.Validations.TR;
 using eCommerceLayer.Application.Services.Abstract;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Concrete.Contexts;
 using Core.Application.Pipelines.Validation;
 using Core.CrossCuttingConcers.Exceptions;
 using Core.Persistence.Paging;

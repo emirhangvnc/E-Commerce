@@ -1,5 +1,5 @@
 ﻿using Core.Persistence.Repositories;
-using Core.Security.Entities;
+using eCommerceLayer.Domain.Entities;
 
 namespace eCommerceLayer.Persistence.Services.Repositories
 {

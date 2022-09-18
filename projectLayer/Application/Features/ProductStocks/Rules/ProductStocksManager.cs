@@ -8,7 +8,7 @@ using eCommerceLayer.Application.Features.ProductStocks.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.ProductStocks.DTOs;
 using eCommerceLayer.Application.Services.Abstract;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Concrete.Contexts;
 
 namespace eCommerceLayer.Application.Features.ProductStocks.Rules
 {

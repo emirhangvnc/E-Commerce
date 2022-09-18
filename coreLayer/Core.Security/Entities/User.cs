@@ -4,7 +4,7 @@ using Core.Security.Enums;
 
 namespace Core.Security.Entities
 {
-    public class User : IdBaseEntity, IEntity
+    public class User : IdBaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -14,7 +14,8 @@ namespace Core.Security.Entities
         public bool Status { get; set; }
         public AuthenticatorType AuthenticatorType { get; set; }
 
-        public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; }
-        public virtual ICollection<RefreshToken> RefreshTokens { get; set; }
+        public ICollection<OtpAuthenticator> OtpAuthenticators { get; set; }
+        public ICollection<EmailAuthenticator> EmailAuthenticators { get; set; }
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
     }
 }

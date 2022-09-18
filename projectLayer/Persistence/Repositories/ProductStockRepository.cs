@@ -1,5 +1,5 @@
 ﻿using Core.Persistence.Repositories;
-using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Concrete.Contexts;
 using eCommerceLayer.Persistence.Services.Repositories;
 using eCommerceLayer.Domain.Entities;
 

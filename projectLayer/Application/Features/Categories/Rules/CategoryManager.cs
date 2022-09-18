@@ -7,7 +7,7 @@ using eCommerceLayer.Application.Features.Categories.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Categories.Validations.TR;
 using eCommerceLayer.Application.Services.Abstract;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Contexts;
+using eCommerceLayer.Persistence.Concrete.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;
 using eCommerceLayer.Application.Features.Categories.DTOs;
 
