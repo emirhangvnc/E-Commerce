@@ -7,27 +7,19 @@ namespace eCommerceLayer.Application.Features.Base.Constants.Standart.General
         internal class GeneralWorker
         {
 
-            internal virtual string Max50Character()
+            internal virtual string MaxCharacter(int number)
             {
-                return $"{BaseConstantsStandart.Max} 50 {BaseConstantsStandart.Character} {BaseConstantsStandart.Entered}";
-            }
-            internal virtual string Max30Character()
-            {
-                return $"{BaseConstantsStandart.Max} 30 {BaseConstantsStandart.Character} {BaseConstantsStandart.Entered}";
-            }
-            internal virtual string Max20Character()
-            {
-                return $"{BaseConstantsStandart.Max} 20 {BaseConstantsStandart.Character} {BaseConstantsStandart.Entered}";
+                return $"{BaseConstantsStandart.Max} {number} {BaseConstantsStandart.Character} {BaseConstantsStandart.Entered}";
             }
             internal virtual string InvalidFileExtension()
             {
-                return $"{BaseConstantsStandart.Invalid} {BaseConstantsStandart.File} Extension";
+                return $"{BaseConstantsStandart.Invalid} {BaseConstantsStandart.File} {BaseConstantsStandart.Extension}";
             }
         }
         readonly static GeneralWorker worker = new GeneralWorker();
-        internal static string Max50Character = worker.Max50Character();
-        internal static string Max30Character = worker.Max30Character();
-        internal static string Max20Character = worker.Max20Character();
+        internal static string Max50Character = worker.MaxCharacter(50);
+        internal static string Max30Character = worker.MaxCharacter(30);
+        internal static string Max20Character = worker.MaxCharacter(20);
         internal static string[] ValidImageFileTypes = { ".JPG", ".JPEG", ".PNG", ".TIF", ".TIFF", ".GIF", ".BMP", ".ICO" };
         internal static string InvalidFileExtension = worker.InvalidFileExtension();
     }

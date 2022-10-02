@@ -7,17 +7,9 @@ namespace eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Genera
     {
         private class Worker : GeneralConstantsStandart.GeneralWorker
         {
-            internal override string Max50Character()
+            internal override string MaxCharacter(int number)
             {
-                return $"{BaseConstantsTR.Max} 50 {BaseConstantsTR.Character} {BaseConstantsTR.Entered}";
-            }
-            internal override string Max30Character()
-            {
-                return $"{BaseConstantsTR.Max} 30 {BaseConstantsTR.Character} {BaseConstantsTR.Entered}";
-            }
-            internal override string Max20Character()
-            {
-                return $"{BaseConstantsTR.Max} 20 {BaseConstantsTR.Character} {BaseConstantsTR.Entered}";
+                return $"{BaseConstantsTR.Max} {number} {BaseConstantsTR.Character} {BaseConstantsTR.Entered}";
             }
             internal override string InvalidFileExtension()
             {
@@ -25,9 +17,9 @@ namespace eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Genera
             }
         }
         readonly static Worker worker = new Worker();
-        public static string Max50Character = worker.Max50Character();
-        public static string Max30Character = worker.Max30Character();
-        public static string Max20Character = worker.Max20Character();
+        public static string Max50Character = worker.MaxCharacter(50);
+        public static string Max30Character = worker.MaxCharacter(30);
+        public static string Max20Character = worker.MaxCharacter(20);
         public static string[] ValidImageFileTypes = GeneralConstantsStandart.ValidImageFileTypes;
         public static string InvalidFileExtension = worker.InvalidFileExtension();
     }
