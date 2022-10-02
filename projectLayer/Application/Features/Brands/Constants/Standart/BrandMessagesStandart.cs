@@ -38,6 +38,10 @@ namespace eCommerceLayer.Application.Features.Brands.Constants.Standart
             {
                 return $"{BrandMessagesStandart.Brand} {BaseConstantsStandart.NotFound}";
             }
+            internal virtual string BrandNameExists()
+            {
+                return $"{BrandMessagesStandart.Brand} {BaseConstantsStandart.Name} {BaseConstantsStandart.Exists}";
+            }
         }
         readonly static BrandWorker worker = new BrandWorker();
         internal static string Brand = worker.Brand();
@@ -48,5 +52,6 @@ namespace eCommerceLayer.Application.Features.Brands.Constants.Standart
         internal static string BrandDeleted = worker.BrandDeleted();
         internal static string BrandUpdated = worker.BrandUpdated();
         internal static string BrandNotFound = worker.BrandNotFound();
+        internal static string BrandNameExists = worker.BrandNameExists();
     }
 }

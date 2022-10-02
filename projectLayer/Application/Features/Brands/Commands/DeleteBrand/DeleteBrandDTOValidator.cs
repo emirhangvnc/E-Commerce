@@ -3,11 +3,11 @@ using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Brands.DTOs;
 
-namespace eCommerceLayer.Application.Features.Brands.Validations.TR
+namespace eCommerceLayer.Application.Features.Brands.Commands.DeleteBrand
 {
-    public class BrandDeleteDTOValidator : AbstractValidator<BrandDeleteDTO>
+    public class DeleteBrandDTOValidator : AbstractValidator<BrandDeleteDTO>
     {
-        public BrandDeleteDTOValidator()
+        public DeleteBrandDTOValidator()
         {
             RuleFor(b => b.Id).NotEmpty().WithMessage($"{BrandMessagesTR.Brand} {BaseConstantsTR.ID} {BaseConstantsTR.NotNull}");
         }

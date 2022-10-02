@@ -39,6 +39,10 @@ namespace eCommerceLayer.Application.Features.Brands.Constants.Languages.TR
             {
                 return $"{BrandMessagesTR.Brand} {BaseConstantsTR.NotFound}";
             }
+            internal override string BrandNameExists()
+            {
+                return $"{BrandMessagesTR.Brand} {BaseConstantsTR.Name} {BaseConstantsTR.NotFound}";
+            }
         }
         readonly static Worker worker = new Worker();
         public static string Brand = worker.Brand();
@@ -49,5 +53,6 @@ namespace eCommerceLayer.Application.Features.Brands.Constants.Languages.TR
         public static string BrandDeleted = worker.BrandDeleted();
         public static string BrandUpdated = worker.BrandUpdated();
         public static string BrandNotFound = worker.BrandNotFound();
+        public static string BrandNameExists = worker.BrandNameExists();
     }
 }

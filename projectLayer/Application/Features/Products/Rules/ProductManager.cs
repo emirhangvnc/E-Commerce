@@ -2,7 +2,6 @@
 using Core.Security.Results;
 using Microsoft.EntityFrameworkCore;
 using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
-using eCommerceLayer.Application.Features.Base.Rules;
 using eCommerceLayer.Application.Features.Products.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Products.DTOs;
 using eCommerceLayer.Application.Services.Abstract;
@@ -10,6 +9,7 @@ using eCommerceLayer.Domain.Entities;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;
 using eCommerceLayer.Application.Features.Products.Validations.TR;
+using eCommerceLayer.Application.Features.Base.Commands;
 
 namespace eCommerceLayer.Application.Features.Products.Rules
 {

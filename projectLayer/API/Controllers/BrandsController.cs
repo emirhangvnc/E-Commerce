@@ -5,6 +5,8 @@ using eCommerceLayer.Application.Features.Brands.DTOs;
 using eCommerceLayer.Application.Features.Brands.Models;
 using eCommerceLayer.Application.Features.Brands.Queries.GetByIdBrand;
 using eCommerceLayer.Application.Features.Brands.Queries.GetListBrand;
+using eCommerceLayer.Application.Features.Brands.Commands.DeleteBrand;
+using eCommerceLayer.Application.Features.Brands.Commands.UpdateBrand;
 
 namespace eCommerceLayer.WebAPI.Controllers
 {
@@ -13,9 +15,23 @@ namespace eCommerceLayer.WebAPI.Controllers
     public class BrandsController : BaseController
     {
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand)
+        public async Task<IActionResult> Add([FromBody] AddBrandCommand createBrandCommand)
         {
-            BrandAddDTO result = await Mediator.Send(createBrandCommand);
+            var result = await Mediator.Send(createBrandCommand);
+            return Created("", result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete([FromBody] DeleteBrandCommand deleteBrandCommand)
+        {
+            var result = await Mediator.Send(deleteBrandCommand);
+            return Created("", result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update([FromBody] UpdateBrandCommand updateBrandCommand)
+        {
+            var result = await Mediator.Send(updateBrandCommand);
             return Created("", result);
         }
 
@@ -23,7 +39,7 @@ namespace eCommerceLayer.WebAPI.Controllers
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
             GetListBrandQuery getListBrandQuery = new() { PageRequest = pageRequest };
-            BrandListModel result = await Mediator.Send(getListBrandQuery);
+            var result = await Mediator.Send(getListBrandQuery);
             return Ok(result);
         }
 

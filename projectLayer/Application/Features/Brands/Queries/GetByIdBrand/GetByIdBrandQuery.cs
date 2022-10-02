@@ -29,7 +29,7 @@ namespace eCommerceLayer.Application.Features.Brands.Queries.GetByIdBrand
 
                 _brandBusinessRules.BrandShouldExistWhenRequested(brand);
 
-                BrandGetByIdDto brandGetByIdDto = _mapper.Map<BrandGetByIdDto>(brand);
+                var brandGetByIdDto = _mapper.Map<BrandGetByIdDto>(brand);
                 return brandGetByIdDto;
             }
         }

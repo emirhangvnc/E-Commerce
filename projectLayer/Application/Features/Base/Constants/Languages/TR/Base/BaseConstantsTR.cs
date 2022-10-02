@@ -120,7 +120,11 @@ namespace eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base
             }
             internal override string Character()
             {
-                return "Character";
+                return "Karakter";
+            }
+            internal override string Exists()
+            {
+                return "Var";
             }
         }
         readonly static TRWorker worker = new TRWorker();
@@ -154,5 +158,6 @@ namespace eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base
         public static string DateOfBirth = worker.DateOfBirth();
         public static string Stock = worker.Stock();
         public static string Character = worker.Character();
+        public static string Exists = worker.Exists();
     }
 }

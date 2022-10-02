@@ -6,6 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using eCommerceLayer.Application.Services.Abstract;
 using eCommerceLayer.Application.Features.Categories.Rules;
+using eCommerceLayer.Application.Features.Categories.Commands.AddCategory;
+using Core.Application.Pipelines.Authorization;
+using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 
 namespace eCommerceLayer.Application
 {
@@ -19,17 +23,16 @@ namespace eCommerceLayer.Application
 
             services.AddScoped<BrandBusinessRules>();
 
+            services.AddScoped<ICategoryBusinessRules, CategoryBusinessRules>();
+
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
-            services.AddScoped<ICategoryService, CategoryManager>();
-
             return services;
-
         }
     }
 }

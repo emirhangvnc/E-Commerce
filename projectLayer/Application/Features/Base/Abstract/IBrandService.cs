@@ -4,8 +4,7 @@ using eCommerceLayer.Domain.Entities;
 
 namespace eCommerceLayer.Application.Services.Abstract
 {
-    public interface IBrandService : IBaseService<Brand,
-        BrandAddDTO, BrandDeleteDTO, BrandUpdateDTO>
+    public interface IBrandService
     {
     }
 }

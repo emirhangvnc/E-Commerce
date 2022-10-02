@@ -38,6 +38,10 @@ namespace eCommerceLayer.Application.Features.Categories.Constants.Standart
             {
                 return $"{CategoryMessagesStandart.Category} {BaseConstantsStandart.NotFound}";
             }
+            internal virtual string CategoryNameExists()
+            {
+                return $"{CategoryMessagesStandart.Category} {BaseConstantsStandart.Name} {BaseConstantsStandart.Exists}";
+            }
         }
         readonly static CategoryWorker worker = new CategoryWorker();
         internal static string Category = worker.Category();
@@ -48,5 +52,6 @@ namespace eCommerceLayer.Application.Features.Categories.Constants.Standart
         internal static string CategoryDeleted = worker.CategoryDeleted();
         internal static string CategoryUpdated = worker.CategoryUpdated();
         internal static string CategoryNotFound = worker.CategoryNotFound();
+        internal static string CategoryNameExists = worker.CategoryNameExists();
     }
 }

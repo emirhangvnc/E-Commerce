@@ -39,6 +39,10 @@ namespace eCommerceLayer.Application.Features.Categories.Constants.Languages.TR
             {
                 return $"{CategoryMessagesTR.Category} {BaseConstantsTR.NotFound}";
             }
+            internal override string CategoryNameExists()
+            {
+                return $"{CategoryMessagesTR.Category} {BaseConstantsTR.Name} {BaseConstantsTR.Exists}";
+            }
         }
         readonly static Worker worker = new Worker();
         public static string Category = worker.Category();
@@ -49,5 +53,6 @@ namespace eCommerceLayer.Application.Features.Categories.Constants.Languages.TR
         public static string CategoryDeleted = worker.CategoryDeleted();
         public static string CategoryUpdated = worker.CategoryUpdated();
         public static string CategoryNotFound = worker.CategoryNotFound();
+        public static string CategoryNameExists = worker.CategoryNameExists();
     }
 }

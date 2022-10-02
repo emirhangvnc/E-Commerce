@@ -124,6 +124,10 @@
             {
                 return "Character";
             }
+            internal virtual string Exists()
+            {
+                return "Exists";
+            }
         }
         readonly static BaseWorker worker = new BaseWorker();
         internal static string NotNull = worker.NotNull();
@@ -156,5 +160,6 @@
         internal static string DateOfBirth = worker.DateOfBirth();
         internal static string Stock = worker.Stock();
         internal static string Character = worker.Character();
+        internal static string Exists = worker.Exists();
     }
 }

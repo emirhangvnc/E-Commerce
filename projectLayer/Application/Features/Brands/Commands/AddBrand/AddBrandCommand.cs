@@ -7,30 +7,30 @@ using eCommerceLayer.Persistence.Services.Repositories;
 
 namespace eCommerceLayer.Application.Features.Brands.Commands.CreateBrand
 {
-    public partial class CreateBrandCommand : IRequest<BrandAddDTO>
+    public partial class AddBrandCommand : IRequest<BrandAddDTO>
     {
         public string Name { get; set; }
 
-        public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommand, BrandAddDTO>
+        public class AddBrandCommandHandler : IRequestHandler<AddBrandCommand, BrandAddDTO>
         {
             private readonly IBrandRepository _brandRepository;
             private readonly IMapper _mapper;
             private readonly BrandBusinessRules _brandBusinessRules;
 
-            public CreateBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
+            public AddBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
             {
                 _brandRepository = brandRepository;
                 _mapper = mapper;
                 _brandBusinessRules = brandBusinessRules;
             }
 
-            public async Task<BrandAddDTO> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
+            public async Task<BrandAddDTO> Handle(AddBrandCommand request, CancellationToken cancellationToken)
             {
-                await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInserted(request.Name);
+                await _brandBusinessRules.BrandNameExists(request.Name);
 
-                Brand mappedBrand = _mapper.Map<Brand>(request);
-                Brand createdBrand = await _brandRepository.AddAsync(mappedBrand);
-                BrandAddDTO createdBrandDto = _mapper.Map<BrandAddDTO>(createdBrand);
+                var mappedBrand = _mapper.Map<Brand>(request);
+                var createdBrand = await _brandRepository.AddAsync(mappedBrand);
+                var createdBrandDto = _mapper.Map<BrandAddDTO>(createdBrand);
 
                 return createdBrandDto;
             }
