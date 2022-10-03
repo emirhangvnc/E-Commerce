@@ -1,5 +1,5 @@
-﻿using eCommerceLayer.Application.Features.Categories.DTOs;
-using eCommerceLayer.Application.Services.Abstract.Base;
+﻿using eCommerceLayer.Application.Features.Base.Abstract;
+using eCommerceLayer.Application.Features.Categories.DTOs;
 
 namespace eCommerceLayer.Application.Features.Categories.Commands.DeleteCategory
 {

@@ -1,12 +1,8 @@
 ﻿using Core.Application.Requests;
 using Microsoft.AspNetCore.Mvc;
-using eCommerceLayer.Application.Features.Brands.Commands.CreateBrand;
 using eCommerceLayer.Application.Features.Brands.DTOs;
-using eCommerceLayer.Application.Features.Brands.Models;
-using eCommerceLayer.Application.Features.Brands.Queries.GetByIdBrand;
-using eCommerceLayer.Application.Features.Brands.Queries.GetListBrand;
-using eCommerceLayer.Application.Features.Brands.Commands.DeleteBrand;
-using eCommerceLayer.Application.Features.Brands.Commands.UpdateBrand;
+using eCommerceLayer.Application.Features.Categories.DTOs;
+using eCommerceLayer.Application.Features.Brands.Abstract;
 
 namespace eCommerceLayer.WebAPI.Controllers
 {
@@ -14,40 +10,53 @@ namespace eCommerceLayer.WebAPI.Controllers
     [ApiController]
     public class BrandsController : BaseController
     {
-        [HttpPost]
-        public async Task<IActionResult> Add([FromBody] AddBrandCommand createBrandCommand)
+        IBrandService _brandService;
+        public BrandsController(IBrandService brandService)
         {
-            var result = await Mediator.Send(createBrandCommand);
-            return Created("", result);
+            _brandService = brandService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete([FromBody] DeleteBrandCommand deleteBrandCommand)
+        public async Task<IActionResult> Add([FromBody] BrandAddDTO addBrandCommand)
         {
-            var result = await Mediator.Send(deleteBrandCommand);
-            return Created("", result);
+            var result = await _brandService.Add(addBrandCommand);
+            if (!result.Success)
+                return BadRequest(result.Message);
+            return Ok(result.Message);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update([FromBody] UpdateBrandCommand updateBrandCommand)
+        public async Task<IActionResult> Delete([FromBody] BrandDeleteDTO deleteBrandCommand)
         {
-            var result = await Mediator.Send(updateBrandCommand);
-            return Created("", result);
+            var result = await _brandService.Delete(deleteBrandCommand);
+            if (!result.Success)
+                return BadRequest(result.Message);
+            return Ok(result.Message);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update([FromBody] BrandUpdateDTO updateBrandCommand)
+        {
+            var result = await _brandService.Update(updateBrandCommand);
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            return Ok(result.Message);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
-            GetListBrandQuery getListBrandQuery = new() { PageRequest = pageRequest };
-            var result = await Mediator.Send(getListBrandQuery);
-            return Ok(result);
+            //var result = await _categoryService.(pageRequest);
+            //var result = await _categoryService.(pageRequest);
+            return Ok();
         }
 
-        [HttpGet("{Id}")]
-        public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdIdBrandQuery)
-        {
-            BrandGetByIdDto brandGetByIdDto = await Mediator.Send(getByIdIdBrandQuery);
-            return Ok(brandGetByIdDto);
-        }
+        //[HttpGet("{Id}")]
+        //public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdIdBrandQuery)
+        //{
+        //    BrandGetByIdDto brandGetByIdDto = await Mediator.Send(getByIdIdBrandQuery);
+        //    return Ok(brandGetByIdDto);
+        //}
     }
 }

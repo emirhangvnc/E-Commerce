@@ -4,10 +4,10 @@ using eCommerceLayer.Application.Features.Categories.Commands.UpdateCategory;
 using eCommerceLayer.Application.Features.Categories.Queries.GetByIdCategory;
 using eCommerceLayer.Application.Features.Categories.Queries.GetListBrand;
 
-namespace eCommerceLayer.Application.Services.Abstract
+namespace eCommerceLayer.Application.Features.Categories.Abstract
 {
-    public interface ICategoryService: IAddCategoryService, IDeleteCategoryService,
-        IUpdateCategoryService, IGetByIdBrandQuery, IGetAllCategoryQuery
+    public interface ICategoryService : IAddCategoryService, IDeleteCategoryService,
+        IUpdateCategoryService, IGetByIdCategoryQuery, IGetAllCategoryQuery
     {
     }
 }

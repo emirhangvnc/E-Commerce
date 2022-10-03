@@ -1,7 +1,8 @@
-﻿namespace eCommerceLayer.Application.Features.Brands.DTOs
+﻿using eCommerceLayer.Application.Features.Base.DTOs;
+
+namespace eCommerceLayer.Application.Features.Brands.DTOs
 {
-    public class BrandGetByIdDto
+    public class BrandGetByIdDto: GetByIDDTO
     {
-        public int Id { get; set; }
     }
 }

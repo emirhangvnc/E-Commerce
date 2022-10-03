@@ -5,9 +5,5 @@ namespace eCommerceLayer.Application.Features.Brands.DTOs
 {
     public class BrandDeleteDTO : DeleteDTO, IDTO
     {
-        public BrandDeleteDTO(int id)
-        {
-            Id = id;
-        }
     }
 }

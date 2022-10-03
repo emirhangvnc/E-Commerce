@@ -1,24 +1,36 @@
 ﻿using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
 using eCommerceLayer.Domain.Entities;
 using Core.CrossCuttingConcers.Exceptions;
-using Core.Persistence.Paging;
-using eCommerceLayer.Persistence.Services.Repositories;
+using AutoMapper;
+using Core.Security.Results;
+using eCommerceLayer.Application.Features.Base.Commands;
+using eCommerceLayer.Persistence.Concrete.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace eCommerceLayer.Application.Features.Brands.Rules
 {
-    public class BrandBusinessRules
+    public class BrandBusinessRules : ManagerBase, IBrandBusinessRules
     {
-        private readonly IBrandRepository _brandRepository;
-
-        public BrandBusinessRules(IBrandRepository brandRepository)
+        public BrandBusinessRules(IMapper mapper, BaseDbContext context) : base(mapper, context)
         {
-            _brandRepository = brandRepository;
         }
 
-        public async Task BrandNameExists(string name)
+        public async Task<IDataResult<Brand>> BrandNameExists(string name)
         {
-            IPaginate<Brand> result = await _brandRepository.GetListAsync(b => b.BrandName == name);
-            if (result.Items.Any()) throw new BusinessException($"{BrandMessagesTR.BrandNameExists}");
+            var result = await DbContext.Brands.SingleOrDefaultAsync(b => b.BrandName == name);
+            if (result != null)
+                return new ErrorDataResult<Brand>(BrandMessagesTR.BrandNameExists);
+
+            return new SuccessDataResult<Brand>(result);
+        }
+
+        public async Task<IDataResult<Brand>> IsBrandIDExists(int id)
+        {
+            var result = await DbContext.Brands.SingleOrDefaultAsync(c => c.Id == id);
+            if (result == null)
+                return new ErrorDataResult<Brand>(BrandMessagesTR.BrandNotFound);
+
+            return new SuccessDataResult<Brand>(result);
         }
 
         public void BrandShouldExistWhenRequested(Brand brand)

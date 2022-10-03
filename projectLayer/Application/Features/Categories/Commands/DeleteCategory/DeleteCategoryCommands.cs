@@ -12,8 +12,8 @@ namespace eCommerceLayer.Application.Features.Categories.Commands.DeleteCategory
 {
     public class DeleteCategoryCommands : ManagerBase, IDeleteCategoryService
     {
-        private readonly CategoryBusinessRules _categoryBusinessRules;
-        public DeleteCategoryCommands(BaseDbContext context, IMapper mapper, CategoryBusinessRules categoryBusinessRules) : base(mapper, context)
+        ICategoryBusinessRules _categoryBusinessRules;
+        public DeleteCategoryCommands(BaseDbContext context, IMapper mapper, ICategoryBusinessRules categoryBusinessRules) : base(mapper, context)
         {
             _categoryBusinessRules = categoryBusinessRules;
         }

@@ -1,39 +1,33 @@
 ﻿using AutoMapper;
-using MediatR;
 using eCommerceLayer.Application.Features.Brands.DTOs;
 using eCommerceLayer.Application.Features.Brands.Rules;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Services.Repositories;
+using eCommerceLayer.Application.Features.Brands.Commands.AddBrand;
+using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
+using eCommerceLayer.Application.Features.Base.Commands;
+using eCommerceLayer.Persistence.Concrete.Contexts;
+using static Core.Application.Pipelines.Validation.ValidationTool;
+using Core.Security.Results;
 
 namespace eCommerceLayer.Application.Features.Brands.Commands.CreateBrand
 {
-    public partial class AddBrandCommand : IRequest<BrandAddDTO>
+    public class AddBrandCommand : ManagerBase, IAddBrandService
     {
-        public string Name { get; set; }
-
-        public class AddBrandCommandHandler : IRequestHandler<AddBrandCommand, BrandAddDTO>
+        IBrandBusinessRules _brandBusinessRules;
+        public AddBrandCommand(IMapper mapper, BaseDbContext context, IBrandBusinessRules brandBusinessRules) : base(mapper, context)
         {
-            private readonly IBrandRepository _brandRepository;
-            private readonly IMapper _mapper;
-            private readonly BrandBusinessRules _brandBusinessRules;
+            _brandBusinessRules = brandBusinessRules;
+        }
 
-            public AddBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
-            {
-                _brandRepository = brandRepository;
-                _mapper = mapper;
-                _brandBusinessRules = brandBusinessRules;
-            }
+        [ValidationAspect(typeof(AddBrandDTOValidator))]
+        public async Task<IResult> Add(BrandAddDTO addedDto)
+        {
+            var result = _brandBusinessRules.BrandNameExists(addedDto.BrandName);
 
-            public async Task<BrandAddDTO> Handle(AddBrandCommand request, CancellationToken cancellationToken)
-            {
-                await _brandBusinessRules.BrandNameExists(request.Name);
-
-                var mappedBrand = _mapper.Map<Brand>(request);
-                var createdBrand = await _brandRepository.AddAsync(mappedBrand);
-                var createdBrandDto = _mapper.Map<BrandAddDTO>(createdBrand);
-
-                return createdBrandDto;
-            }
+            var brand = Mapper.Map<Brand>(result);
+            await DbContext.Brands.AddAsync(brand);
+            await DbContext.SaveChangesAsync();
+            return new SuccessResult(BrandMessagesTR.BrandAdded);
         }
     }
 }

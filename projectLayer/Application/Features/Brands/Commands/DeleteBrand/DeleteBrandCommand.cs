@@ -1,39 +1,35 @@
 ﻿using AutoMapper;
-using MediatR;
 using eCommerceLayer.Application.Features.Brands.DTOs;
 using eCommerceLayer.Application.Features.Brands.Rules;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Services.Repositories;
+using Core.Security.Results;
+using eCommerceLayer.Application.Features.Base.Commands;
+using eCommerceLayer.Persistence.Concrete.Contexts;
+using static Core.Application.Pipelines.Validation.ValidationTool;
+using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
 
 namespace eCommerceLayer.Application.Features.Brands.Commands.DeleteBrand
 {
-    public partial class DeleteBrandCommand : IRequest<BrandDeleteDTO>
+    public class DeleteBrandCommand : ManagerBase, IDeleteBrandService
     {
-        public string Name { get; set; }
-
-        public class DeleteBrandCommandHandler : IRequestHandler<DeleteBrandCommand, BrandDeleteDTO>
+        IBrandBusinessRules _brandBusinessRules;
+        public DeleteBrandCommand(BaseDbContext context, IMapper mapper, IBrandBusinessRules brandBusinessRules) : base(mapper, context)
         {
-            private readonly IBrandRepository _brandRepository;
-            private readonly IMapper _mapper;
-            private readonly BrandBusinessRules _brandBusinessRules;
+            _brandBusinessRules = brandBusinessRules;
+        }
 
-            public DeleteBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
-            {
-                _brandRepository = brandRepository;
-                _mapper = mapper;
-                _brandBusinessRules = brandBusinessRules;
-            }
+        [ValidationAspect(typeof(DeleteBrandDTOValidator))]
+        public async Task<IResult> Delete(BrandDeleteDTO deletedDto)
+        {
+            var result = _brandBusinessRules.IsBrandIDExists(deletedDto.Id);
 
-            public async Task<BrandDeleteDTO> Handle(DeleteBrandCommand request, CancellationToken cancellationToken)
-            {
-                await _brandBusinessRules.BrandNameExists(request.Name);
+            if (result.Result.Message != null)
+                return new ErrorResult(result.Result.Message);
 
-                var mappedBrand = _mapper.Map<Brand>(request);
-                var deleteBrand = await _brandRepository.AddAsync(mappedBrand);
-                var deleteBrandDto = _mapper.Map<BrandDeleteDTO>(deleteBrand);
-
-                return deleteBrandDto;
-            }
+            var brand = Mapper.Map<Brand>(result);
+            await Task.Run(() => DbContext.Brands.Remove(brand));
+            await DbContext.SaveChangesAsync();
+            return new SuccessResult($"{result.Result.Data.BrandName} {BrandMessagesTR.BrandAdded}");
         }
     }
 }

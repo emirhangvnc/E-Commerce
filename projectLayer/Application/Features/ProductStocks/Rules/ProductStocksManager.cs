@@ -5,10 +5,10 @@ using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using eCommerceLayer.Application.Features.Products.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.ProductStocks.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.ProductStocks.DTOs;
-using eCommerceLayer.Application.Services.Abstract;
 using eCommerceLayer.Domain.Entities;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using eCommerceLayer.Application.Features.Base.Commands;
+using eCommerceLayer.Application.Features.ProductStocks.Abstract;
 
 namespace eCommerceLayer.Application.Features.ProductStocks.Rules
 {

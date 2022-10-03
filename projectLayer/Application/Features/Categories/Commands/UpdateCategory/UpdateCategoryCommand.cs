@@ -10,10 +10,10 @@ using static Core.Application.Pipelines.Validation.ValidationTool;
 
 namespace eCommerceLayer.Application.Features.Categories.Commands.UpdateCategory
 {
-    public class UpdateCategoryCommands : ManagerBase, IUpdateCategoryService
+    public class UpdateCategoryCommand : ManagerBase, IUpdateCategoryService
     {
         private readonly CategoryBusinessRules _categoryBusinessRules;
-        public UpdateCategoryCommands(BaseDbContext context, IMapper mapper, CategoryBusinessRules categoryBusinessRules) : base(mapper, context)
+        public UpdateCategoryCommand(BaseDbContext context, IMapper mapper, CategoryBusinessRules categoryBusinessRules) : base(mapper, context)
         {
             _categoryBusinessRules = categoryBusinessRules;
         }

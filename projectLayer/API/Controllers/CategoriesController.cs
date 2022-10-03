@@ -1,14 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using eCommerceLayer.Application.Features.Categories.Commands.AddCategory;
 using eCommerceLayer.Application.Features.Categories.DTOs;
-using eCommerceLayer.Application.Features.Categories.Commands.DeleteCategory;
-using eCommerceLayer.Application.Services.Abstract;
-using eCommerceLayer.Application.Features.Categories.Commands.UpdateCategory;
 using Core.Application.Requests;
-using eCommerceLayer.Application.Features.Brands.DTOs;
-using eCommerceLayer.Application.Features.Brands.Queries.GetListBrand;
-using MediatR;
-using eCommerceLayer.Application.Features.Categories.Queries.GetListBrand;
+using eCommerceLayer.Application.Features.Categories.Abstract;
 
 namespace eCommerceLayer.WebAPI.Controllers
 {

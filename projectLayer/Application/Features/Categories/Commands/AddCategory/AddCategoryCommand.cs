@@ -10,10 +10,10 @@ using static Core.Application.Pipelines.Validation.ValidationTool;
 
 namespace eCommerceLayer.Application.Features.Categories.Commands.AddCategory
 {
-    public class AddCategoryCommands : ManagerBase, IAddCategoryService
+    public class AddCategoryCommand : ManagerBase, IAddCategoryService
     {
         ICategoryBusinessRules _categoryBusinessRules;
-        public AddCategoryCommands(IMapper mapper, BaseDbContext context, ICategoryBusinessRules categoryBusinessRules) : base(mapper, context)
+        public AddCategoryCommand(IMapper mapper, BaseDbContext context, ICategoryBusinessRules categoryBusinessRules) : base(mapper, context)
         {
             _categoryBusinessRules = categoryBusinessRules;
         }

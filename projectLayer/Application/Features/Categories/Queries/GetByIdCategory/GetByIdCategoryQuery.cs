@@ -9,10 +9,10 @@ using eCommerceLayer.Persistence.Concrete.Contexts;
 
 namespace eCommerceLayer.Application.Features.Categories.Queries.GetByIdCategory
 {
-    public class GetByIdBrandQuery : ManagerBase, IGetByIdBrandQuery
+    public class GetByIdCategoryQuery : ManagerBase, IGetByIdCategoryQuery
     {
         ICategoryBusinessRules _categoryBusinessRules;
-        public GetByIdBrandQuery(IMapper mapper, BaseDbContext context, ICategoryBusinessRules categoryBusinessRules) : base(mapper, context)
+        public GetByIdCategoryQuery(IMapper mapper, BaseDbContext context, ICategoryBusinessRules categoryBusinessRules) : base(mapper, context)
         {
             _categoryBusinessRules = categoryBusinessRules;
         }

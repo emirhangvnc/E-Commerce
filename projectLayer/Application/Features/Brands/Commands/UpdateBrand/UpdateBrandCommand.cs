@@ -1,39 +1,35 @@
 ﻿using AutoMapper;
-using MediatR;
+using Core.Security.Results;
+using eCommerceLayer.Application.Features.Base.Commands;
+using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Brands.DTOs;
 using eCommerceLayer.Application.Features.Brands.Rules;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Services.Repositories;
+using eCommerceLayer.Persistence.Concrete.Contexts;
+using static Core.Application.Pipelines.Validation.ValidationTool;
 
 namespace eCommerceLayer.Application.Features.Brands.Commands.UpdateBrand
 {
-    public partial class UpdateBrandCommand : IRequest<BrandUpdateDTO>
+    public class UpdateBrandCommand : ManagerBase, IUpdateBrandService
     {
-        public string Name { get; set; }
-
-        public class UpdateBrandCommandHandler : IRequestHandler<UpdateBrandCommand, BrandUpdateDTO>
+        IBrandBusinessRules _brandBusinessRules;
+        public UpdateBrandCommand(BaseDbContext context, IMapper mapper, IBrandBusinessRules brandBusinessRules) : base(mapper, context)
         {
-            private readonly IBrandRepository _brandRepository;
-            private readonly IMapper _mapper;
-            private readonly BrandBusinessRules _brandBusinessRules;
+            _brandBusinessRules = brandBusinessRules;
+        }
 
-            public UpdateBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
-            {
-                _brandRepository = brandRepository;
-                _mapper = mapper;
-                _brandBusinessRules = brandBusinessRules;
-            }
+        [ValidationAspect(typeof(UpdateBrandDTOValidator))]
+        public async Task<IResult> Update(BrandUpdateDTO updateDto)
+        {
+            var result = _brandBusinessRules.IsBrandIDExists(updateDto.Id);
 
-            public async Task<BrandUpdateDTO> Handle(UpdateBrandCommand request, CancellationToken cancellationToken)
-            {
-                await _brandBusinessRules.BrandNameExists(request.Name);
+            if (result.Result.Message != null)
+                return new ErrorResult(result.Result.Message);
 
-                var mappedBrand = _mapper.Map<Brand>(request);
-                var updateBrand = await _brandRepository.AddAsync(mappedBrand);
-                var updateBrandDto = _mapper.Map<BrandUpdateDTO>(updateBrand);
-
-                return updateBrandDto;
-            }
+            var brand = Mapper.Map<Brand>(result);
+            await Task.Run(() => DbContext.Brands.Update(brand));
+            await DbContext.SaveChangesAsync();
+            return new SuccessResult(BrandMessagesTR.BrandUpdated);
         }
     }
 }

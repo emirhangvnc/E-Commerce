@@ -1,6 +1,6 @@
 ﻿namespace eCommerceLayer.Application.Features.Base.DTOs
 {
-    public class DeleteDTO
+    public class GetByIDDTO
     {
         public int Id { get; set; }
     }

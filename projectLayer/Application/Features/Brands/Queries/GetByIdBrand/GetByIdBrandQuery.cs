@@ -3,35 +3,29 @@ using MediatR;
 using eCommerceLayer.Application.Features.Brands.DTOs;
 using eCommerceLayer.Application.Features.Brands.Rules;
 using eCommerceLayer.Domain.Entities;
-using eCommerceLayer.Persistence.Services.Repositories;
+using Core.Security.Results;
+using eCommerceLayer.Application.Features.Base.Commands;
+using eCommerceLayer.Persistence.Concrete.Contexts;
+using eCommerceLayer.Application.Features.Brands.Constants.Languages.TR;
 
 namespace eCommerceLayer.Application.Features.Brands.Queries.GetByIdBrand
 {
-    public class GetByIdBrandQuery : IRequest<BrandGetByIdDto>
+    public class GetByIdBrandQuery : ManagerBase, IGetByIdBrandQuery
     {
-        public int Id { get; set; }
-        public class GetByIdBrandQueryHandler : IRequestHandler<GetByIdBrandQuery, BrandGetByIdDto>
+        IBrandBusinessRules _brandBusinessRules;
+        public GetByIdBrandQuery(IMapper mapper, BaseDbContext context, IBrandBusinessRules brandBusinessRules) : base(mapper, context)
         {
-            private readonly IBrandRepository _brandRepository;
-            private readonly IMapper _mapper;
-            private readonly BrandBusinessRules _brandBusinessRules;
+            _brandBusinessRules = brandBusinessRules;
+        }
 
-            public GetByIdBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
-            {
-                _brandRepository = brandRepository;
-                _mapper = mapper;
-                _brandBusinessRules = brandBusinessRules;
-            }
+        public async Task<IDataResult<Brand>> GetById(BrandGetByIdDto brandGetByIdDto)
+        {
+            var result = await _brandBusinessRules.IsBrandIDExists(brandGetByIdDto.Id);
 
-            public async Task<BrandGetByIdDto> Handle(GetByIdBrandQuery request, CancellationToken cancellationToken)
-            {
-                Brand? brand = await _brandRepository.GetAsync(b => b.Id == request.Id);
+            if (result.Message != null)
+                return new ErrorDataResult<Brand>(result.Message);
 
-                _brandBusinessRules.BrandShouldExistWhenRequested(brand);
-
-                var brandGetByIdDto = _mapper.Map<BrandGetByIdDto>(brand);
-                return brandGetByIdDto;
-            }
+            return new SuccessDataResult<Brand>(result.Data, BrandMessagesTR.BrandListed);
         }
     }
 }
