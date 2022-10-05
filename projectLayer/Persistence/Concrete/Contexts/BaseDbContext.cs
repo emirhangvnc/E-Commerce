@@ -18,10 +18,13 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductFeature> ProductFeatures { get; set; }
+        public DbSet<ProductVariant> ProductVariants { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<Variant> Variants { get; set; }
+        public DbSet<VariantValue> VariantValues { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
@@ -169,6 +172,18 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.HasOne(p => p.FeatureValue).WithMany(p => p.ProductFeatures).HasForeignKey(p => p.FeatureValueId);
             });
 
+            modelBuilder.Entity<ProductVariant>(p =>
+            {
+                p.ToTable("ProductVariants").HasKey(k => k.Id);
+                p.Property(p => p.Id).HasColumnName("Id");
+
+                p.Property(p => p.ProductId).HasColumnName("ProductId").IsRequired();
+                p.HasOne(p => p.Product).WithMany(p => p.ProductVariants).HasForeignKey(p => p.ProductId);
+
+                p.Property(p => p.VariantValueId).HasColumnName("VariantValueId").IsRequired();
+                p.HasOne(p => p.VariantValue).WithMany(p => p.ProductVariants).HasForeignKey(p => p.VariantValueId);
+            });
+
             modelBuilder.Entity<ProductImage>(p =>
             {
                 p.ToTable("ProductImages").HasKey(k => k.Id);
@@ -232,7 +247,26 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 o.HasOne(p => p.User).WithMany(p => p.UserOperationClaims).HasForeignKey(p => p.OperationClaimId);
             });
 
+            modelBuilder.Entity<Variant>(v =>
+            {
+                v.ToTable("Variants").HasKey(k => k.Id);
+                v.Property(p => p.Id).HasColumnName("Id");
 
+                v.Property(p => p.VariantName).HasColumnName("VariantName").IsRequired();
+                v.Property(p => p.VariantName).HasMaxLength(30);
+            });
+
+            modelBuilder.Entity<VariantValue>(v =>
+            {
+                v.ToTable("FeatureValues").HasKey(k => k.Id);
+                v.Property(p => p.Id).HasColumnName("Id");
+
+                v.Property(p => p.VariantId).HasColumnName("VariantId").IsRequired();
+                v.HasOne(p => p.Variant).WithMany(p => p.VariantValues).HasForeignKey(p => p.VariantId);
+
+                v.Property(p => p.Value).HasColumnName("Value").IsRequired();
+                v.Property(p => p.Value).HasMaxLength(40);
+            });
 
             //Category[] categoryEntitySeeds = { new(1, "Kadın"), new(2, "Erkek") };
             //modelBuilder.Entity<Category>().HasData(categoryEntitySeeds);

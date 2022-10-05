@@ -5,6 +5,5 @@ namespace eCommerceLayer.Persistence.Services.Repositories
 {
     public interface IFeatureRepository : IAsyncRepository<Feature>, IRepository<Feature>
     {
-
     }
 }

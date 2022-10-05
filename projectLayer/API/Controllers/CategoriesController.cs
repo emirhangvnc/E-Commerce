@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using eCommerceLayer.Application.Features.Categories.DTOs;
+using eCommerceLayer.Application.Features.Concrete.Categories.DTOs;
 using Core.Application.Requests;
-using eCommerceLayer.Application.Features.Categories.Abstract;
+using eCommerceLayer.Application.Features.Concrete.Categories.Abstract;
 
 namespace eCommerceLayer.WebAPI.Controllers
 {

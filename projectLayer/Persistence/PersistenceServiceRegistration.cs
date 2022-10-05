@@ -15,6 +15,7 @@ namespace eCommerceLayer.Persistence
             services.AddDbContext<BaseDbContext>(options =>
                                                      options.UseSqlServer(
                                                          configuration.GetConnectionString("ECommerceConnectionString")));
+
             services.AddScoped<IBrandImageRepository, BrandImageRepository>();
             services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -27,7 +28,10 @@ namespace eCommerceLayer.Persistence
             services.AddScoped<IProductImageRepository, ProductImageRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductStockRepository, ProductStockRepository>();
+            services.AddScoped<IProductVariantRepository, ProductVariantRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IVariantRepository, VariantRepository>();
+            services.AddScoped<IVariantValueRepository, VariantValueRepository>();
 
             return services;
         }

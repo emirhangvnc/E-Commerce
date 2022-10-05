@@ -5,6 +5,5 @@ namespace eCommerceLayer.Persistence.Services.Repositories
 {
     public interface IProductCategoryRepository : IAsyncRepository<ProductCategory>, IRepository<ProductCategory>
     {
-
     }
 }

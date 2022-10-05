@@ -17,5 +17,6 @@ namespace eCommerceLayer.Domain.Entities
         public ICollection<ProductFeature> ProductFeatures { get; set; }
         public ICollection<ProductImage> ProductImages { get; set; }
         public ICollection<ProductStock> ProductStocks { get; set; }
+        public ICollection<ProductVariant> ProductVariants { get; set; }
     }
 }
