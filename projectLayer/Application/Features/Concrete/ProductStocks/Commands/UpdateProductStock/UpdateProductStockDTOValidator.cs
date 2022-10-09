@@ -4,11 +4,11 @@ using eCommerceLayer.Application.Features.Concrete.Products.Constants.Languages.
 using eCommerceLayer.Application.Features.Concrete.ProductStocks.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Concrete.ProductStocks.DTOs;
 
-namespace eCommerceLayer.Application.Features.Concrete.ProductStocks.Validations.TR
+namespace eCommerceLayer.Application.Features.Concrete.ProductStocks.Commands.UpdateProductStock
 {
-    public class ProductStockAddDTOValidator : AbstractValidator<ProductStockAddDTO>
+    public class UpdateProductStockDTOValidator : AbstractValidator<ProductStockUpdateDTO>
     {
-        public ProductStockAddDTOValidator()
+        public UpdateProductStockDTOValidator()
         {
             RuleFor(p => p.ProductId).NotEmpty().WithMessage($"{ProductMessagesTR.Product} {BaseConstantsTR.ID} {BaseConstantsTR.NotNull}");
             RuleFor(p => p.UnitStock).NotEmpty().WithMessage($"{ProductStockMessagesTR.ProductStock} Değeri {BaseConstantsTR.NotNull}");

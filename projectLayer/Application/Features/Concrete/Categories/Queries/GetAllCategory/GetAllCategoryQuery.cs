@@ -9,7 +9,7 @@ using eCommerceLayer.Domain.Entities;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using eCommerceLayer.Persistence.Services.Repositories;
 
-namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetListBrand
+namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetListCategory
 {
     public class GetAllCategoryQuery : ManagerBase, IGetAllCategoryQuery
     {
@@ -21,7 +21,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetLis
             _categoryRepository = categoryRepository;
         }
 
-        public async Task<IDataResult<Category>> GetById(PageRequest request)
+        public async Task<IDataResult<Category>> GetAll(PageRequest request)
         {
             var result = await _categoryRepository.GetListAsync(index: request.Page, size: request.PageSize);
 

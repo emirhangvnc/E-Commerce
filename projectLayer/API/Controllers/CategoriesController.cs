@@ -2,6 +2,8 @@
 using eCommerceLayer.Application.Features.Concrete.Categories.DTOs;
 using Core.Application.Requests;
 using eCommerceLayer.Application.Features.Concrete.Categories.Abstract;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByCategoryId;
+using eCommerceLayer.Application.Features.Concrete.Brands.Abstract;
 
 namespace eCommerceLayer.WebAPI.Controllers
 {
@@ -46,15 +48,21 @@ namespace eCommerceLayer.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
-            //var result = await _categoryService.(pageRequest);
-            return Ok();
+            var result = _categoryService.GetAll(pageRequest);
+            if (result.Result.Data != null)
+                return Ok(result.Result.Data);
+
+            return BadRequest(result.Result.Message);
         }
 
-        //[HttpGet("{Id}")]
-        //public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdIdBrandQuery)
-        //{
-        //    BrandGetByIdDto brandGetByIdDto = await Mediator.Send(getByIdIdBrandQuery);
-        //    return Ok(brandGetByIdDto);
-        //}
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetById([FromRoute] CategoryGetByIdDto categoryGetByIdDto)
+        {
+            var result = _categoryService.GetById(categoryGetByIdDto);
+            if (result.Result.Data != null)
+                return Ok(result.Result.Message);
+
+            return BadRequest(result.Result.Message);
+        }
     }
 }

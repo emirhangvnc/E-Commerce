@@ -1,8 +1,8 @@
 ﻿using eCommerceLayer.Application.Features.Concrete.Categories.Commands.AddCategory;
 using eCommerceLayer.Application.Features.Concrete.Categories.Commands.DeleteCategory;
 using eCommerceLayer.Application.Features.Concrete.Categories.Commands.UpdateCategory;
-using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByIdCategory;
-using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetListBrand;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByCategoryId;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetListCategory;
 
 namespace eCommerceLayer.Application.Features.Concrete.Categories.Abstract
 {

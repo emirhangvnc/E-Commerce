@@ -21,7 +21,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Queries.GetByIdBra
         {
             var result = await _brandBusinessRules.IsIDExists(brandGetByIdDto.Id);
 
-            if (result.Message != null)
+            if (result.Data == null)
                 return new ErrorDataResult<Brand>(result.Message);
 
             return new SuccessDataResult<Brand>(result.Data, BrandMessagesTR.BrandListed);

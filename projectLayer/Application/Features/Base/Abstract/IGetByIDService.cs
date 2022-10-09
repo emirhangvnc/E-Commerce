@@ -3,10 +3,10 @@ using Core.Security.Results;
 
 namespace eCommerceLayer.Application.Features.Base.Abstract
 {
-    public interface IGetByIDService<TEntity>
-        where TEntity : IEntity
-        //where TDTO : IDTO
+    public interface IGetByIDService<E,D>
+        where E : IEntity,new()
+        where D : IDTO, new()
     {
-        Task<IDataResult<TEntity>> GetById(TEntity getAll);
+        Task<IDataResult<E>> GetById(D getById);
     }
 }

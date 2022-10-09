@@ -1,12 +1,8 @@
 ﻿using eCommerceLayer.Application.Features.Concrete.Brands.Rules;
-using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using eCommerceLayer.Application.Features.Concrete.Categories.Rules;
-using Core.Application.Pipelines.Authorization;
-using Core.Application.Pipelines.Caching;
-using Core.Application.Pipelines.Logging;
 using eCommerceLayer.Application.Features.Concrete.Brands.Commands.DeleteBrand;
 using eCommerceLayer.Application.Features.Concrete.Brands.Commands.UpdateBrand;
 using eCommerceLayer.Application.Features.Concrete.Brands.Commands.AddBrand;
@@ -16,8 +12,8 @@ using eCommerceLayer.Application.Features.Concrete.Brands.Queries.GetByIdBrand;
 using eCommerceLayer.Application.Features.Concrete.Categories.Commands.AddCategory;
 using eCommerceLayer.Application.Features.Concrete.Categories.Commands.DeleteCategory;
 using eCommerceLayer.Application.Features.Concrete.Categories.Commands.UpdateCategory;
-using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetListBrand;
-using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByIdCategory;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetListCategory;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByCategoryId;
 
 namespace eCommerceLayer.Application
 {
@@ -86,11 +82,6 @@ namespace eCommerceLayer.Application
 
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             return services;
         }

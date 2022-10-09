@@ -7,7 +7,7 @@ using eCommerceLayer.Application.Features.Concrete.Categories.Rules;
 using eCommerceLayer.Domain.Entities;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 
-namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByIdCategory
+namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByCategoryId
 {
     public class GetByIdCategoryQuery : ManagerBase, IGetByIdCategoryQuery
     {
