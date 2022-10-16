@@ -5,14 +5,14 @@ using eCommerceLayer.Application.Features.Concrete.Categories.Constants.Language
 using eCommerceLayer.Application.Features.Concrete.Products.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Concrete.Products.DTOs;
 
-namespace eCommerceLayer.Application.Features.Concrete.Products.Validations.TR
+namespace eCommerceLayer.Application.Features.Concrete.Products.Commands.AddProduct
 {
-    public class ProductAddDTOValidator : AbstractValidator<ProductAddDTO>
+    public class AddProductDTOValidator : AbstractValidator<ProductAddDTO>
     {
-        public ProductAddDTOValidator()
+        public AddProductDTOValidator()
         {
-            RuleFor(c => c.ProductName).NotEmpty().WithMessage($"{ProductMessagesTR.Product} {BaseConstantsTR.Name} {BaseConstantsTR.NotNull}");
-            RuleFor(c => c.ProductName).MaximumLength(30).WithMessage($"{ProductMessagesTR.Product} {BaseConstantsTR.Name} {GeneralConstantsTR.Max50Character}");
+            RuleFor(c => c.ProductName).NotEmpty().WithMessage($"{ProductMessagesTR.ProductNameNotNull}");
+            RuleFor(c => c.ProductName).MaximumLength(50).WithMessage($"{ProductMessagesTR.Product} {BaseConstantsTR.Name} {GeneralConstantsTR.Max50Character}");
             RuleFor(c => c.CategoryId).NotEmpty().WithMessage($"{CategoryMessagesTR.Category} {BaseConstantsTR.ID} {BaseConstantsTR.NotNull}");
         }
     }

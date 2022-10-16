@@ -20,6 +20,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
         public DbSet<ProductFeature> ProductFeatures { get; set; }
         public DbSet<ProductVariant> ProductVariants { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
@@ -124,12 +125,8 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.ToTable("Products").HasKey(k => k.Id);
                 p.Property(p => p.Id).HasColumnName("Id");
 
-                p.Property(p => p.ProductName).HasColumnName("ProductName").IsRequired();
+                p.Property(p => p.ProductName).HasColumnName("ProductName");
                 p.Property(p => p.ProductName).HasMaxLength(40);
-                
-                p.Property(p => p.Price).HasColumnName("Price").IsRequired();
-                
-                p.Property(p => p.ListPrice).HasColumnName("ListPrice").IsRequired();
                 
                 p.Property(p => p.CreatedDate).HasColumnName("CreatedDate").IsRequired();
                 
@@ -182,6 +179,8 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
 
                 p.Property(p => p.VariantValueId).HasColumnName("VariantValueId").IsRequired();
                 p.HasOne(p => p.VariantValue).WithMany(p => p.ProductVariants).HasForeignKey(p => p.VariantValueId);
+
+                p.Property(p => p.VariantPrice).HasColumnName("VariantPrice").IsRequired();
             });
 
             modelBuilder.Entity<ProductImage>(p =>
