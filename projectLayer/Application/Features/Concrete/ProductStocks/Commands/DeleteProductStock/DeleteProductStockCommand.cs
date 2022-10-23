@@ -2,7 +2,7 @@
 using eCommerceLayer.Application.Features.Concrete.ProductStocks.DTOs;
 using eCommerceLayer.Application.Features.Concrete.ProductStocks.Rules;
 using eCommerceLayer.Domain.Entities;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;

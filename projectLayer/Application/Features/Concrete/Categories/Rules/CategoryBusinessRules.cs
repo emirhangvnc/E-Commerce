@@ -1,5 +1,5 @@
 ﻿using Core.CrossCuttingConcers.Exceptions;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Concrete.Categories.Constants.Languages.TR;
 using eCommerceLayer.Domain.Entities;
 using AutoMapper;

@@ -12,9 +12,9 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Profiles
         {
             CreateMap<BrandAddDTO, Brand>().ReverseMap();
             CreateMap<BrandDeleteDTO, Brand>().ReverseMap();
+            CreateMap<BrandUpdateDTO, Brand>().ReverseMap();
             CreateMap<BrandGetByIdDto, Brand>().ReverseMap();
             CreateMap<IPaginate<Brand>, BrandListModel>().ReverseMap();
-            CreateMap<BrandDeleteDTO, Brand>().ReverseMap();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Application.Features.Base.Constants.Languages.TR.Base;
 using eCommerceLayer.Application.Features.Concrete.Products.Constants.Languages.TR;

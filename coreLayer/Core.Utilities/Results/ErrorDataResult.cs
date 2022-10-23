@@ -1,4 +1,4 @@
-﻿namespace Core.Security.Results
+﻿namespace Core.Utilities.Results
 {
     public class ErrorDataResult<T>:DataResult<T>
     {

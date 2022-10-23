@@ -2,7 +2,7 @@
 using eCommerceLayer.Domain.Entities;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Application.Features.Concrete.Products.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Concrete.Products.Commands.AddProduct;

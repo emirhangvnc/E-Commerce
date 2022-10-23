@@ -1,6 +1,6 @@
-﻿using Core.Security.Results;
+﻿using Core.Utilities.Results;
 
-namespace Core.Security.Business
+namespace Core.Utilities.Business
 {
     public class BusinessRules
     {

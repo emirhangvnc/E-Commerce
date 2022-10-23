@@ -1,7 +1,7 @@
 ﻿using Core.Persistence.Repositories;
-using Core.Security.Results;
+using Core.Utilities.Results;
 
-namespace eCommerceLayer.Application.Features.Base.Abstract
+namespace eCommerceLayer.Application.Features.Base.Abstract.Commands
 {
     public interface IAddService<T> where T : IDTO
     {

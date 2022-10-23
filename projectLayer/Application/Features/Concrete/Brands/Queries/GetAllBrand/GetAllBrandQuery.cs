@@ -3,7 +3,7 @@ using Core.Application.Requests;
 using eCommerceLayer.Application.Features.Concrete.Brands.Models;
 using eCommerceLayer.Domain.Entities;
 using eCommerceLayer.Persistence.Services.Repositories;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using eCommerceLayer.Persistence.Repositories;

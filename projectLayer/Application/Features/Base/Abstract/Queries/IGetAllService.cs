@@ -1,8 +1,8 @@
 ﻿using Core.Application.Requests;
 using Core.Persistence.Repositories;
-using Core.Security.Results;
+using Core.Utilities.Results;
 
-namespace eCommerceLayer.Application.Features.Base.Abstract
+namespace eCommerceLayer.Application.Features.Base.Abstract.Queries
 {
     public interface IGetAllService<T> where T : IEntity
     {

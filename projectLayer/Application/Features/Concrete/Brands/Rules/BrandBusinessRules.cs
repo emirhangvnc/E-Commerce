@@ -2,7 +2,7 @@
 using eCommerceLayer.Domain.Entities;
 using Core.CrossCuttingConcers.Exceptions;
 using AutoMapper;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using Microsoft.EntityFrameworkCore;

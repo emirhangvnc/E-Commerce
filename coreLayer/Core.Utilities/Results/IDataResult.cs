@@ -1,4 +1,4 @@
-﻿namespace Core.Security.Results
+﻿namespace Core.Utilities.Results
 {
     public interface IDataResult<T>:IResult
     {

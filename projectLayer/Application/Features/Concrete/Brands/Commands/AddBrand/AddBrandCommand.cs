@@ -7,7 +7,7 @@ using eCommerceLayer.Application.Features.Concrete.Brands.Constants.Languages.TR
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using static Core.Application.Pipelines.Validation.ValidationTool;
-using Core.Security.Results;
+using Core.Utilities.Results;
 
 namespace eCommerceLayer.Application.Features.Concrete.Brands.Commands.CreateBrand
 {
@@ -23,6 +23,8 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Commands.CreateBra
         public async Task<IResult> Add(BrandAddDTO addedDto)
         {
             var result = _brandBusinessRules.NameExists(addedDto.BrandName);
+            if(!result.Result.Success)
+                return new ErrorResult(result.Result.Message);
 
             var brand = Mapper.Map<Brand>(result);
             await DbContext.Brands.AddAsync(brand);

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Core.Application.Requests;
-using Core.Security.Results;
+using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Base.Commands;
 using eCommerceLayer.Application.Features.Concrete.Categories.Constants.Languages.TR;
 using eCommerceLayer.Application.Features.Concrete.Categories.Models;
