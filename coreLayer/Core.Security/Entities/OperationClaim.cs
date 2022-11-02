@@ -1,5 +1,4 @@
-﻿using Core.Persistence.Repositories;
-using Core.Security.Entities.Base;
+﻿using Core.Security.Entities.Base;
 
 namespace Core.Security.Entities
 {

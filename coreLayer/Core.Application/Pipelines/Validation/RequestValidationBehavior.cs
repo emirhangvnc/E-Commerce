@@ -14,8 +14,7 @@ namespace Core.Application.Pipelines.Validation
             _validators = validators;
         }
 
-        public Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
-                                      RequestHandlerDelegate<TResponse> next)
+        public Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             ValidationContext<object> context = new(request);
             List<ValidationFailure> failures = _validators

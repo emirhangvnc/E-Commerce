@@ -1,5 +1,4 @@
-﻿
-namespace Core.Application.Requests
+﻿namespace Core.Application.Requests
 {
     public class PageRequest
     {
