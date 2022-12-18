@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using eCommerceLayer.Persistence.Concrete.Contexts;
 using eCommerceLayer.Persistence.Repositories;
-using eCommerceLayer.Persistence.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using eCommerceLayer.Application.Features.Services.Repositories;
 
 namespace eCommerceLayer.Persistence
 {

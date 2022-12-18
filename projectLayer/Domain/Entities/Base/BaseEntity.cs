@@ -1,16 +1,12 @@
-﻿namespace eCommerceLayer.Domain.Entities.Base
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace eCommerceLayer.Domain.Entities.Base
 {
     public class BaseEntity
     {
+        [Key]
         public int Id { get; set; }
-
-        public BaseEntity()
-        {
-        }
-
-        public BaseEntity(int id) : this()
-        {
-            Id = id;
-        }
+        public bool? Status { get; set; }
+        public DateTime? CreationDate { get; set; }
     }
 }

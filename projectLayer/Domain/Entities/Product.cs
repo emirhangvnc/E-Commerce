@@ -13,10 +13,6 @@ namespace eCommerceLayer.Domain.Entities
         public string ShortDescription { get; set; }
         public string FullDescription { get; set; }
         public decimal Weight { get; set; }
-        public int PriceId { get; set; }
-        public ProductPrice ProductPrice { get; set; }
-        public int StockId { get; set; }
-        public ProductStock ProductStock { get; set; }
 
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }

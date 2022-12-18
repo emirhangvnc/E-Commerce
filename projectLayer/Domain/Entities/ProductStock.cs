@@ -8,6 +8,7 @@ namespace eCommerceLayer.Domain.Entities
         public Product Product { get; set; }
         public int ProductId { get; set; }
         public int UnitStock { get; set; }
+        public string? Description { get; set; }
         public DateTime UpdatedDate { get; set; }
     }
 }

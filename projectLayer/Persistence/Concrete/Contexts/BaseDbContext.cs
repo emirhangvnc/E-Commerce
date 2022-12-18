@@ -7,13 +7,19 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
     public class BaseDbContext : DbContext
     {
         protected IConfiguration Configuration { get; set; }
+        public DbSet<Address> Addresses { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<BrandImage> BrandImages { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<District> Districts { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Feature> Feature { get; set; }
         public DbSet<FeatureValue> FeatureValues { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
