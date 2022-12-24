@@ -5,9 +5,9 @@ using eCommerceLayer.Application.Features.Services.Repositories;
 
 namespace eCommerceLayer.Persistence.Repositories
 {
-    public class UserRepository : EfRepositoryBase<User, BaseDbContext>, IUserRepository
+    public class CustomerRepository : EfRepositoryBase<Customer, BaseDbContext>, ICustomerRepository
     {
-        public UserRepository(BaseDbContext context) : base(context)
+        public CustomerRepository(BaseDbContext context) : base(context)
         {
         }
     }

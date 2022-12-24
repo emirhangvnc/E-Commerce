@@ -7,9 +7,7 @@ namespace eCommerceLayer.Domain.Entities
     {
         public Brand Brand { get; set; }
         public int BrandId { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public string? FileName { get; set; }
+        public string? FilePath { get; set; }
     }
 }

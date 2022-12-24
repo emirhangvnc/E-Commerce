@@ -3,7 +3,7 @@ using eCommerceLayer.Domain.Entities;
 
 namespace eCommerceLayer.Application.Features.Services.Repositories
 {
-    public interface IUserRepository : IAsyncRepository<User>, IRepository<User>
+    public interface ICustomerRepository : IAsyncRepository<Customer>, IRepository<Customer>
     {
     }
 }

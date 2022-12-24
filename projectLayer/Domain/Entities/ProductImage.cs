@@ -7,8 +7,8 @@ namespace eCommerceLayer.Domain.Entities
     {
         public Product Product { get; set; }
         public int ProductId { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
+        public string? FileName { get; set; }
+        public string? FilePath { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }

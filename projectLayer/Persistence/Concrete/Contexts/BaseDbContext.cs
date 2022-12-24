@@ -28,7 +28,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<Variant> Variants { get; set; }
         public DbSet<VariantValue> VariantValues { get; set; }
@@ -92,8 +92,8 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 f.Property(p => p.ProductId).HasColumnName("ProductId").IsRequired();
                 f.HasOne(p => p.Product).WithMany(p => p.Favorites).HasForeignKey(p => p.ProductId);
 
-                f.Property(p => p.UserId).HasColumnName("UserId").IsRequired();
-                f.HasOne(p => p.User).WithMany(p => p.Favorites).HasForeignKey(p => p.UserId);
+                f.Property(p => p.CustomerId).HasColumnName("UserId").IsRequired();
+                f.HasOne(p => p.Customer).WithMany(p => p.Favorites).HasForeignKey(p => p.CustomerId);
             });
 
             modelBuilder.Entity<Feature>(f =>
@@ -220,7 +220,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate").IsRequired();
             });
 
-            modelBuilder.Entity<User>(u =>
+            modelBuilder.Entity<Customer>(u =>
             {
                 u.ToTable("Users").HasKey(k => k.Id);
                 u.Property(p => p.Id).HasColumnName("Id");
@@ -249,7 +249,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 o.Property(p => p.Id).HasColumnName("Id");
 
                 o.Property(p => p.UserId).HasColumnName("UserId").IsRequired();
-                o.HasOne(p => p.User).WithMany(p => p.UserOperationClaims).HasForeignKey(p => p.OperationClaimId);
+                o.HasOne(p => p.Customer).WithMany(p => p.UserOperationClaims).HasForeignKey(p => p.OperationClaimId);
             });
 
             modelBuilder.Entity<Variant>(v =>

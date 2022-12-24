@@ -32,7 +32,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Features.Commands.AddFeat
 
                 var mappedFeature = _mapper.Map<Feature>(request);
                 mappedFeature.Status = true;
-                mappedFeature.CreationDate = DateTime.Now;
+                mappedFeature.CreatedDate = DateTime.Now;
                 await _featureRepository.AddAsync(mappedFeature);
                 return new SuccessResult("Feature Added");
             }

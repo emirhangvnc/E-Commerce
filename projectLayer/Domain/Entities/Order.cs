@@ -5,10 +5,10 @@ namespace eCommerceLayer.Domain.Entities
 {
     public class Order : BaseEntity, IEntity
     {
-        public int UserId { get; set; }
-        public User User { get; set; }
-        public int AddressId { get; set; }
+        public Customer Customer { get; set; }
+        public int CustomerId { get; set; }
         public Address Address { get; set; }
+        public int AddressId { get; set; }
         public decimal? TotalPrice { get; set; }
         public int? TotalItem { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }

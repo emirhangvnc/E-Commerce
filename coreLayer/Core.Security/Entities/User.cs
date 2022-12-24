@@ -10,7 +10,8 @@ namespace Core.Security.Entities
         public string Email { get; set; }
         public byte[] PasswordSalt { get; set; }
         public byte[] PasswordHash { get; set; }
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public AuthenticatorType AuthenticatorType { get; set; }
 
         public ICollection<OtpAuthenticator> OtpAuthenticators { get; set; }
