@@ -5,8 +5,8 @@ using eCommerceLayer.Application.Features.Concrete.Categories.Commands.DeleteFea
 using eCommerceLayer.Application.Features.Concrete.Categories.Commands.UpdateCategory;
 using eCommerceLayer.Application.Features.Concrete.Categories.DTOs;
 using eCommerceLayer.Application.Features.Concrete.Categories.Model;
-using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetAllCategories;
-using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByIdCategories;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetAllCategory;
+using eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetByIdCategory;
 using eCommerceLayer.Domain.Entities;
 
 namespace eCommerceLayer.Application.Features.Concrete.Categories.Profiles
@@ -28,7 +28,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Profiles
             CreateMap<Category, CategoryListDTO>().ReverseMap();
             CreateMap<Category, GetListCategoryQuery>().ReverseMap();
             CreateMap<Category, CategoryGetByIdDTO>().ReverseMap();
-            CreateMap<Category, GetByIdCategoriesQuery>().ReverseMap();
+            CreateMap<Category, GetByIdCategoryQuery>().ReverseMap();
         }
     }
 }

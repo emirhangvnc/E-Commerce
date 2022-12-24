@@ -6,5 +6,9 @@ namespace eCommerceLayer.Application.Features.Concrete.Features.DTOs
     public class FeatureUpdateDTO : UpdateDTO, IDTO
     {
         public string FeatureName { get; set; }
+        public FeatureUpdateDTO(string featureName)
+        {
+            FeatureName = featureName;
+        }
     }
 }

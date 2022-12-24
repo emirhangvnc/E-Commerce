@@ -9,15 +9,15 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.AddCa
 {
     public partial class CategoryAddCommand : IRequest<IResult>
     {
-        public string FeatureName { get; set; }
+        public string CategoryName { get; set; }
 
-        public class FeatureAddCommandHandler : IRequestHandler<CategoryAddCommand, IResult>
+        public class CategoryAddCommandHandler : IRequestHandler<CategoryAddCommand, IResult>
         {
             private readonly ICategoryRepository _categoryRepository;
             private readonly IMapper _mapper;
             private readonly ICategoryBusinessRules _categoryBusinessRules;
 
-            public FeatureAddCommandHandler(ICategoryRepository categoryRepository, IMapper mapper, ICategoryBusinessRules categoryBusinessRules)
+            public CategoryAddCommandHandler(ICategoryRepository categoryRepository, IMapper mapper, ICategoryBusinessRules categoryBusinessRules)
             {
                 _categoryRepository = categoryRepository;
                 _mapper = mapper;
@@ -26,7 +26,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.AddCa
 
             public async Task<IResult> Handle(CategoryAddCommand request, CancellationToken cancellationToken)
             {
-                var result= await _categoryBusinessRules.CategoryNameExists(request.FeatureName);
+                var result= await _categoryBusinessRules.CategoryNameExists(request.CategoryName);
                 if (!result.Success)
                     return new ErrorResult(result.Message);
 

@@ -9,11 +9,11 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.Delet
     {
         public int Id { get; set; }
 
-        public class FeatureDeleteCommandHandler : IRequestHandler<CategoryDeleteCommand, IResult>
+        public class CategoryDeleteCommandHandler : IRequestHandler<CategoryDeleteCommand, IResult>
         {
             private readonly ICategoryBusinessRules _categoryBusinessRules;
 
-            public FeatureDeleteCommandHandler(ICategoryBusinessRules categoryBusinessRules)
+            public CategoryDeleteCommandHandler(ICategoryBusinessRules categoryBusinessRules)
             {
                 _categoryBusinessRules = categoryBusinessRules;
             }

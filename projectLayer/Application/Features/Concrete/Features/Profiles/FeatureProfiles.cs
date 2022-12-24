@@ -5,8 +5,8 @@ using eCommerceLayer.Application.Features.Concrete.Features.Commands.DeleteFeatu
 using eCommerceLayer.Application.Features.Concrete.Features.Commands.UpdateFeature;
 using eCommerceLayer.Application.Features.Concrete.Features.DTOs;
 using eCommerceLayer.Application.Features.Concrete.Features.Model;
-using eCommerceLayer.Application.Features.Concrete.Features.Queries.GetAllFeatures;
-using eCommerceLayer.Application.Features.Concrete.Features.Queries.GetByIdFeatures;
+using eCommerceLayer.Application.Features.Concrete.Features.Queries.GetAllFeature;
+using eCommerceLayer.Application.Features.Concrete.Features.Queries.GetByIdFeature;
 using eCommerceLayer.Domain.Entities;
 
 namespace eCommerceLayer.Application.Features.Concrete.Features.Profiles
@@ -28,7 +28,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Features.Profiles
             CreateMap<Feature, FeatureListDTO>().ReverseMap();
             CreateMap<Feature, GetListFeatureQuery>().ReverseMap();
             CreateMap<Feature, FeatureGetByIdDTO>().ReverseMap();
-            CreateMap<Feature, GetByIdFeaturesQuery>().ReverseMap();
+            CreateMap<Feature, GetByIdFeatureQuery>().ReverseMap();
         }
     }
 }

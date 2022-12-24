@@ -7,7 +7,7 @@ using eCommerceLayer.Application.Features.Services.Repositories;
 using eCommerceLayer.Domain.Entities;
 using MediatR;
 
-namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetAllCategories
+namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetAllCategory
 {
     public class GetListCategoryQuery : IRequest<IDataResult<Category>>
     {
@@ -25,12 +25,12 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Queries.GetAll
 
             public async Task<IDataResult<Category>> Handle(GetListCategoryQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<Category> Feature = await _categoryRepository.GetListAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
-                if (Feature.Items.Count <= 0)
+                IPaginate<Category> Category = await _categoryRepository.GetListAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
+                if (Category.Items.Count <= 0)
                     return new ErrorDataResult<Category>("Category Not Found");
-                var mappedFeatureListModel = _mapper.Map<CategoryListModel>(Feature);
+                var mappedCategoryListModel = _mapper.Map<CategoryListModel>(Category);
 
-                return new SuccessDataResult<Category>(mappedFeatureListModel, "Categories Listed");
+                return new SuccessDataResult<Category>(mappedCategoryListModel, "Categories Listed");
             }
         }
     }

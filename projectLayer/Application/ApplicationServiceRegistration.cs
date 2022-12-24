@@ -1,4 +1,6 @@
 ﻿using Core.Application.Pipelines.Validation;
+using eCommerceLayer.Application.Features.Concrete.Brands.Rules;
+using eCommerceLayer.Application.Features.Concrete.Categories.Rules;
 using eCommerceLayer.Application.Features.Concrete.Features.Rules;
 using FluentValidation;
 using MediatR;
@@ -15,6 +17,8 @@ namespace eCommerceLayer.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
+            services.AddScoped<IBrandBusinessRules, BrandBusinessRules>();
+            services.AddScoped<ICategoryBusinessRules, CategoryBusinessRules>();
             services.AddScoped<IFeatureBusinessRules, FeatureBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
