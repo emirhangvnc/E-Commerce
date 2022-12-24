@@ -25,6 +25,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.Delet
                     return new ErrorResult(result.Message);
 
                 result.Data.Status = false;
+                result.Data.UpdatedDate = DateTime.Now;
                 return new SuccessResult("Category Deleted");
             }
         }

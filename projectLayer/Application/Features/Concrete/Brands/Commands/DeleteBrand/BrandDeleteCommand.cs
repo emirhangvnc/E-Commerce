@@ -24,6 +24,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Commands.DeleteBra
                     return new ErrorResult(result.Message);
 
                 result.Data.Status = false;
+                result.Data.UpdatedDate = DateTime.Now;
                 return new SuccessResult("Brand Deleted");
             }
         }

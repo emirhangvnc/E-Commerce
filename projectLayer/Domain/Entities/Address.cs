@@ -14,5 +14,6 @@ namespace eCommerceLayer.Domain.Entities
         public District District { get; set; }
         public string AddressLine { get; set; }
         public int? ZipCode { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

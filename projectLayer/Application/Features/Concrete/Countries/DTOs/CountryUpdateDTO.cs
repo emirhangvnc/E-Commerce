@@ -1,14 +1,13 @@
 ﻿using Core.Persistence.Repositories;
-using eCommerceLayer.Domain.Entities.Base;
+using eCommerceLayer.Application.Features.Base.DTOs;
 
-namespace eCommerceLayer.Domain.Entities
+namespace eCommerceLayer.Application.Features.Concrete.Countries.DTOs
 {
-    public class Country : BaseEntity, IEntity
+    public class CountryUpdateDTO : UpdateDTO, IDTO
     {
         public string CountryName { get; set; }
         public string? Alpha2Code { get; set; }
         public string? Alpha3Code { get; set; }
         public int? NumericCode { get; set; }
-        public ICollection<City> Cities { get; set; }
     }
 }

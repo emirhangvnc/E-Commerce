@@ -36,6 +36,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Commands.UpdateBra
 
                 var mappedBrand = _mapper.Map<Brand>(idCheck);
                 mappedBrand.Status = true;
+                mappedBrand.UpdatedDate = DateTime.Now;
                 await _brandRepository.UpdateAsync(mappedBrand);
                 return new SuccessResult("Brand Updated");
             }

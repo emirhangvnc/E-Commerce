@@ -36,6 +36,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Features.Commands.DeleteF
                     return new ErrorResult(result.Message);
 
                 result.Data.Status = false;
+                result.Data.UpdatedDate = DateTime.Now;
                 return new SuccessResult("Feature Deleted");
             }
         }

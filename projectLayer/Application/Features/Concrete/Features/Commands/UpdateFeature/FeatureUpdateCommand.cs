@@ -41,6 +41,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Features.Commands.UpdateF
 
                 var mappedFeature = _mapper.Map<Feature>(idCheck);
                 mappedFeature.Status = true;
+                mappedFeature.UpdatedDate = DateTime.Now;
                 await _featureRepository.UpdateAsync(mappedFeature);
                 return new SuccessResult("Feature Updated");
             }

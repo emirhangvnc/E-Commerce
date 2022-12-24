@@ -4,6 +4,6 @@ namespace eCommerceLayer.Domain.Entities
 {
     public class UserOperationClaim : Core.Security.Entities.UserOperationClaim, IEntity
     {
-        public Customer Customer { get; set; }
+        public User User { get; set; }
     }
 }

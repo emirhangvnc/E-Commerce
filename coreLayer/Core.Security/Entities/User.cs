@@ -12,6 +12,7 @@ namespace Core.Security.Entities
         public byte[] PasswordHash { get; set; }
         public bool? Status { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public AuthenticatorType AuthenticatorType { get; set; }
 
         public ICollection<OtpAuthenticator> OtpAuthenticators { get; set; }

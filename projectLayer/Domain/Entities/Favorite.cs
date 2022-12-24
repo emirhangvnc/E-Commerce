@@ -5,8 +5,8 @@ namespace eCommerceLayer.Domain.Entities
 {
     public class Favorite : BaseEntity, IEntity
     {
-        public Customer Customer { get; set; }
-        public int CustomerId { get; set; }
+        public User User { get; set; }
+        public int UserId { get; set; }
         public Product Product { get; set; }
         public int ProductId { get; set; }
     }

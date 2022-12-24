@@ -33,6 +33,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.AddCa
                 var mappedCategory = _mapper.Map<Category>(request);
                 mappedCategory.Status = true;
                 mappedCategory.CreatedDate = DateTime.Now;
+                mappedCategory.UpdatedDate = DateTime.Now;
                 await _categoryRepository.AddAsync(mappedCategory);
                 return new SuccessResult("Category Added");
             }

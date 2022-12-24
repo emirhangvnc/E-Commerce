@@ -5,7 +5,7 @@ namespace eCommerceLayer.Domain.Entities
 {
     public class Product : BaseEntity, IEntity
     {
-        public string ProductId { get; set; }
+        public string? ProductId { get; set; }
         public string? ModelCode { get; set; }
         public string? Sku { get; set; }
         public string? Gtin { get; set; }
@@ -15,6 +15,7 @@ namespace eCommerceLayer.Domain.Entities
         public decimal? Weight { get; set; }
 
         public ICollection<Favorite> Favorites { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
         public ICollection<ProductBrand> ProductBrands { get; set; }
         public ICollection<ProductCategory> ProductCategories { get; set; }
         public ICollection<ProductFeature> ProductFeatures { get; set; }

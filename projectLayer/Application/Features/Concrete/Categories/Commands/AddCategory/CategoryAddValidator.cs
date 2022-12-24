@@ -8,7 +8,6 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.AddCa
         public CategoryAddValidator()
         {
             RuleFor(f => f.CategoryName).NotEmpty();
-            RuleFor(f => f.CategoryName).MinimumLength(2);
             RuleFor(f => f.CategoryName).MaximumLength(30);
         }
     }

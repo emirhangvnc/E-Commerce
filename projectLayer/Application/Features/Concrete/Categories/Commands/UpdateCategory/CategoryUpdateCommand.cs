@@ -36,6 +36,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Categories.Commands.Updat
 
                 var mappedCategory = _mapper.Map<Category>(idCheck);
                 mappedCategory.Status = true;
+                mappedCategory.UpdatedDate = DateTime.Now;
                 await _categoryRepository.UpdateAsync(mappedCategory);
                 return new SuccessResult("Category Updated");
             }

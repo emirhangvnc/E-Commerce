@@ -22,7 +22,6 @@ namespace eCommerceLayer.Persistence
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IDistrictRepository, DistrictRepository>();
             services.AddScoped<IFavoriteRepository, FavoriteRepository>();
             services.AddScoped<IFeatureRepository, FeatureRepository>();
@@ -36,7 +35,7 @@ namespace eCommerceLayer.Persistence
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductStockRepository, ProductStockRepository>();
             services.AddScoped<IProductVariantRepository, ProductVariantRepository>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVariantRepository, VariantRepository>();
             services.AddScoped<IVariantValueRepository, VariantValueRepository>();
 

@@ -33,6 +33,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Commands.AddBrand
                 var mappedBrand = _mapper.Map<Brand>(request);
                 mappedBrand.Status = true;
                 mappedBrand.CreatedDate = DateTime.Now;
+                mappedBrand.UpdatedDate = DateTime.Now;
                 await _brandRepository.AddAsync(mappedBrand);
                 return new SuccessResult("Brand Added");
             }

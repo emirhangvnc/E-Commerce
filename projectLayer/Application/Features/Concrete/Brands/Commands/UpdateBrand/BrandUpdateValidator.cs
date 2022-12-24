@@ -9,7 +9,6 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Commands.UpdateBra
         {
             RuleFor(b => b.Id).NotEmpty();
             RuleFor(b => b.BrandName).NotEmpty();
-            RuleFor(b => b.BrandName).MinimumLength(2);
             RuleFor(b => b.BrandName).MaximumLength(30);
         }
     }
