@@ -25,12 +25,12 @@ namespace eCommerceLayer.Application.Features.Concrete.Countries.Queries.GetAllC
 
             public async Task<IDataResult<Country>> Handle(GetListCountryQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<Country> Category = await _countryRepository.GetListAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
-                if (Category.Items.Count <= 0)
+                IPaginate<Country> country = await _countryRepository.GetListAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
+                if (country.Items.Count <= 0)
                     return new ErrorDataResult<Country>("Country Not Found");
-                var mappedCategoryListModel = _mapper.Map<CategoryListModel>(Category);
+                var mappedCountryListModel = _mapper.Map<CategoryListModel>(country);
 
-                return new SuccessDataResult<Country>(mappedCategoryListModel, "Countries Listed");
+                return new SuccessDataResult<Country>(mappedCountryListModel, "Countries Listed");
             }
         }
     }

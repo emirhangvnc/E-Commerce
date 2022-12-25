@@ -8,7 +8,7 @@ namespace eCommerceLayer.Domain.Entities
         public string CityName { get; set; }
         public Country Country { get; set; }
         public int CountryId { get; set; }
-        public string CityCode { get; set; }
+        public string? CityCode { get; set; }
         public ICollection<District> Districts { get; set; }
     }
 }

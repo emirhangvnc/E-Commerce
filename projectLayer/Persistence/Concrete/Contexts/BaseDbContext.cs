@@ -137,13 +137,13 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 c.Property(p => p.CountryId).HasColumnName("CountryId").IsRequired();
                 c.HasOne(p => p.Country).WithMany(p => p.Cities).HasForeignKey(p => p.CountryId);
 
-                c.Property(p => p.CityCode).HasColumnName("CityCode").IsRequired();
+                c.Property(p => p.CityCode).HasColumnName("CityCode");
                 c.Property(p => p.CityCode).HasMaxLength(30);
 
                 c.Property(p => p.Status).HasColumnName("Status");
                 c.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 c.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             modelBuilder.Entity<Country>(c =>
             {
@@ -164,7 +164,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 c.Property(p => p.Status).HasColumnName("Status");
                 c.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 c.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             modelBuilder.Entity<District>(c =>
             {

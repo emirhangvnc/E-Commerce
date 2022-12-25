@@ -21,7 +21,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Countries.Profiles
             CreateMap<Country, CountryDeleteDTO>().ReverseMap();
             CreateMap<Country, CountryDeleteCommand>().ReverseMap();
 
-            CreateMap<Country, Country>().ReverseMap();
+            CreateMap<Country, CountryUpdateDTO>().ReverseMap();
             CreateMap<Country, CountryUpdateCommand>().ReverseMap();
 
             CreateMap<IPaginate<Country>, CountryListModel>().ReverseMap();
