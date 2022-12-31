@@ -283,19 +283,19 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.ProductId).HasColumnName("ProductId").IsRequired();
 
                 p.Property(p => p.ModelCode).HasColumnName("ModelCode");
-                p.Property(p => p.ModelCode).HasMaxLength(50);
+                p.Property(p => p.ModelCode).HasMaxLength(80);
 
                 p.Property(p => p.Sku).HasColumnName("Sku");
-                p.Property(p => p.Sku).HasMaxLength(50);
+                p.Property(p => p.Sku).HasMaxLength(80);
 
                 p.Property(p => p.Gtin).HasColumnName("Gtin");
-                p.Property(p => p.Gtin).HasMaxLength(50);
+                p.Property(p => p.Gtin).HasMaxLength(80);
 
                 p.Property(p => p.ProductName).HasColumnName("ProductName");
-                p.Property(p => p.ProductName).HasMaxLength(50);
+                p.Property(p => p.ProductName).HasMaxLength(100);
 
                 p.Property(p => p.ShortDescription).HasColumnName("ShortDescription");
-                p.Property(p => p.ShortDescription).HasMaxLength(80);
+                p.Property(p => p.ShortDescription).HasMaxLength(100);
 
                 p.Property(p => p.FullDescription).HasColumnName("FullDescription");
                 p.Property(p => p.Weight).HasColumnName("Weight");
@@ -387,9 +387,13 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.VariantValueId).HasColumnName("VariantValueId").IsRequired();
                 p.HasOne(p => p.VariantValue).WithMany(p => p.ProductVariants).HasForeignKey(p => p.VariantValueId);
 
-                p.Property(p => p.VariantSku).HasColumnName("VariantSku").IsRequired();
-                p.Property(p => p.VariantGtin).HasColumnName("VariantGtin").IsRequired();
-                p.Property(p => p.VariantPrice).HasColumnName("VariantPrice").IsRequired();
+                p.Property(p => p.VariantSku).HasColumnName("VariantSku");
+                p.Property(p => p.VariantSku).HasMaxLength(80);
+
+                p.Property(p => p.VariantGtin).HasColumnName("VariantGtin");
+                p.Property(p => p.VariantGtin).HasMaxLength(80);
+
+                p.Property(p => p.VariantPrice).HasColumnName("VariantPrice");
 
                 p.Property(p => p.Status).HasColumnName("Status");
                 p.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
@@ -496,7 +500,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 v.Property(p => p.Status).HasColumnName("Status");
                 v.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 v.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             //Category[] categoryEntitySeeds = { new(1, "Kadın"), new(2, "Erkek") };
             //modelBuilder.Entity<Category>().HasData(categoryEntitySeeds);

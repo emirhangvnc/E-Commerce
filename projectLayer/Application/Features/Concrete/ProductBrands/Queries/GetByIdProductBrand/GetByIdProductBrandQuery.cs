@@ -28,3 +28,4 @@ namespace eCommerceLayer.Application.Features.Concrete.ProductBrands.Queries.Get
             }
         }
     }
+}
