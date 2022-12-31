@@ -319,7 +319,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.Status).HasColumnName("Status");
                 p.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 p.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             modelBuilder.Entity<ProductCategory>(p =>
             {
@@ -335,7 +335,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.Status).HasColumnName("Status");
                 p.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 p.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             modelBuilder.Entity<ProductFeature>(p =>
             {
@@ -480,7 +480,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 v.Property(p => p.Status).HasColumnName("Status");
                 v.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 v.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             modelBuilder.Entity<VariantValue>(v =>
             {

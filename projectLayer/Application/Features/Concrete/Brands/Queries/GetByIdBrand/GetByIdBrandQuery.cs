@@ -9,12 +9,12 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Queries.GetByIdBra
     public class GetByIdBrandQuery : IRequest<IDataResult<Brand>>
     {
         public int Id { get; set; }
-        public class GetByIdCategoriesQueryHandler : IRequestHandler<GetByIdBrandQuery, IDataResult<Brand>>
+        public class GetByIdVariantQueryHandler : IRequestHandler<GetByIdBrandQuery, IDataResult<Brand>>
         {
             private readonly IMapper _mapper;
             private readonly IBrandBusinessRules _brandBusinessRules;
 
-            public GetByIdCategoriesQueryHandler(IMapper mapper, IBrandBusinessRules brandBusinessRules)
+            public GetByIdVariantQueryHandler(IMapper mapper, IBrandBusinessRules brandBusinessRules)
             {
                 _mapper = mapper;
                 _brandBusinessRules = brandBusinessRules;

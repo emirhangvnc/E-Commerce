@@ -18,7 +18,7 @@ namespace eCommerceLayer.Application.Features.Concrete.Brands.Rules
         {
             var result = await _brandRepository.GetAsync(b => b.BrandName == name);
             if (result != null && result.Status==true)
-                return new ErrorResult($"Category Name {result.Id} Used by ID Number");
+                return new ErrorResult($"Brand Name {result.Id} Used by ID Number");
             return new SuccessResult();
         }
 
