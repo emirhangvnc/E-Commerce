@@ -1,4 +1,5 @@
 ﻿using Core.Persistence.Repositories;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Rules;
 
 namespace eCommerceLayer.Application.Features.Concrete.FeatureValues.DTOs
 {

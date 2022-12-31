@@ -1,7 +1,10 @@
 ﻿using Core.Application.Pipelines.Validation;
 using eCommerceLayer.Application.Features.Concrete.Brands.Rules;
 using eCommerceLayer.Application.Features.Concrete.Categories.Rules;
+using eCommerceLayer.Application.Features.Concrete.Cities.Rules;
+using eCommerceLayer.Application.Features.Concrete.Countries.Rules;
 using eCommerceLayer.Application.Features.Concrete.Features.Rules;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Rules;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +22,10 @@ namespace eCommerceLayer.Application
 
             services.AddScoped<IBrandBusinessRules, BrandBusinessRules>();
             services.AddScoped<ICategoryBusinessRules, CategoryBusinessRules>();
+            services.AddScoped<ICityBusinessRules, CityBusinessRules>();
+            services.AddScoped<ICountryBusinessRules, CountryBusinessRules>();
             services.AddScoped<IFeatureBusinessRules, FeatureBusinessRules>();
+            services.AddScoped<IFeatureValueBusinessRules, FeatureValueBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));

@@ -12,14 +12,10 @@ namespace eCommerceLayer.Application.Features.Concrete.FeatureValues.Queries.Get
         public int Id { get; set; }
         public class GetByIdFeatureValueQueryHandler : IRequestHandler<GetByIdFeatureValueQuery, IDataResult<FeatureValue>>
         {
-            private readonly IFeatureValueRepository _featureValueRepository;
-            private readonly IMapper _mapper;
             private readonly IFeatureValueBusinessRules _featureValueBusinessRules;
 
-            public GetByIdFeatureValueQueryHandler(IFeatureValueRepository featureValueRepository, IMapper mapper, IFeatureValueBusinessRules featureValueBusinessRules)
+            public GetByIdFeatureValueQueryHandler(IFeatureValueBusinessRules featureValueBusinessRules)
             {
-                _featureValueRepository = featureValueRepository;
-                _mapper = mapper;
                 _featureValueBusinessRules = featureValueBusinessRules;
             }
 

@@ -28,7 +28,7 @@ namespace eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.Up
 
             public async Task<IResult> Handle(FeatureValueUpdateCommand request, CancellationToken cancellationToken)
             {
-                var nameCheck = await _featureValueBusinessRules.FeatureValueNameExists(request.FeatureName);
+                var nameCheck = await _featureValueBusinessRules.FeatureValueNameExists(request.Value);
                 if (!nameCheck.Success)
                     return new ErrorResult(nameCheck.Message);
                 var idCheck = await _featureValueBusinessRules.IsIDExists(request.Id);

@@ -1,19 +1,19 @@
 ﻿using AutoMapper;
 using Core.Persistence.Paging;
-using eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.AddFeature;
-using eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.DeleteFeature;
-using eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.UpdateFeature;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.AddFeatureValue;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.DeleteFeatureValue;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Commands.UpdateFeatureValue;
 using eCommerceLayer.Application.Features.Concrete.FeatureValues.DTOs;
 using eCommerceLayer.Application.Features.Concrete.FeatureValues.Model;
-using eCommerceLayer.Application.Features.Concrete.FeatureValues.Queries.GetAllFeature;
-using eCommerceLayer.Application.Features.Concrete.FeatureValues.Queries.GetByIdFeature;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Queries.GetAllFeatureValue;
+using eCommerceLayer.Application.Features.Concrete.FeatureValues.Queries.GetByIdFeatureValue;
 using eCommerceLayer.Domain.Entities;
 
 namespace eCommerceLayer.Application.Features.Concrete.FeatureValues.Profiles
 {
-    public class FeatureProfiles : Profile
+    public class FeatureValueProfiles : Profile
     {
-        public FeatureProfiles()
+        public FeatureValueProfiles()
         {
             CreateMap<FeatureValue, FeatureValueAddDTO>().ReverseMap();
             CreateMap<FeatureValue, FeatureValueAddCommand>().ReverseMap();
