@@ -28,6 +28,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<ProductStock> ProductStocks { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<Variant> Variants { get; set; }
@@ -196,7 +197,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 f.Property(p => p.Status).HasColumnName("Status");
                 f.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 f.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Continue
 
             modelBuilder.Entity<Feature>(f =>
             {
@@ -303,7 +304,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.Status).HasColumnName("Status");
                 p.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 p.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Continue
 
             modelBuilder.Entity<ProductBrand>(p =>
             {
@@ -398,7 +399,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 p.Property(p => p.Status).HasColumnName("Status");
                 p.Property(p => p.CreatedDate).HasColumnName("CreatedDate");
                 p.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
-            });
+            }); //Crud
 
             modelBuilder.Entity<ProductImage>(p =>
             {
@@ -451,7 +452,7 @@ namespace eCommerceLayer.Persistence.Concrete.Contexts
                 u.Property(p => p.LastName).HasMaxLength(30);
 
                 u.Property(p => p.Email).HasColumnName("Email").IsRequired();
-                u.Property(p => p.Email).HasMaxLength(40);
+                u.Property(p => p.Email).HasMaxLength(60);
 
                 u.Property(p => p.PasswordHash).HasColumnName("PasswordHash").IsRequired();
                 u.Property(p => p.PasswordHash).HasMaxLength(500);

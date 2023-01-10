@@ -28,4 +28,10 @@
     <ProjectReference Include="..\Domain\eCommerceLayer.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Concrete\Favorites\Commands\" />
+    <Folder Include="Features\Concrete\Favorites\Queries\" />
+    <Folder Include="Features\Concrete\Favorites\Profiles\" />
+  </ItemGroup>
+
 </Project>

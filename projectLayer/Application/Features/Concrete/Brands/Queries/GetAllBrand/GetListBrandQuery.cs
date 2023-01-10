@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core.Application.Requests;
 using Core.Persistence.Paging;
+using Core.Persistence.Repositories;
 using Core.Utilities.Results;
 using eCommerceLayer.Application.Features.Concrete.Brands.Model;
 using eCommerceLayer.Application.Features.Services.Repositories;

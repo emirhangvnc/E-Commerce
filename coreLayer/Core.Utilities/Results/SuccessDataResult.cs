@@ -21,30 +21,6 @@ namespace Core.Utilities.Results
         {
 
         }
-        public SuccessDataResult(IQueryable queryable) : base(true, queryable)
-        {
-
-        }
-        public SuccessDataResult(IQueryable queryable, string message) : base(true, message, queryable)
-        {
-
-        }
-        public SuccessDataResult(IPaginate<T> paginate) : base(true, paginate)
-        {
-
-        }
-        public SuccessDataResult(IPaginate<T> paginate, string message) : base(true, message, paginate)
-        {
-
-        }
-        public SuccessDataResult(IDTO dto) : base(true, dto)
-        {
-
-        }
-        public SuccessDataResult(IDTO dto, string message) : base(true, message, dto)
-        {
-
-        }
         public SuccessDataResult(IModel model) : base(true, model)
         {
 
